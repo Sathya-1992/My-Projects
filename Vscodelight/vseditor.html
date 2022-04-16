@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Editor</title>
+    <link rel="stylesheet" href="./vseditor.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+</head>
+<!-- To Solarized light theme Change class name "light" in body -->
+<!-- To dark theme Change class name "dark" in body  -->
+<body class="light"> 
+    <div class="container">
+        <header class="flex_cont cursordef">
+            <span></span>
+            <span class="heading white">index.html - Tab-Content - Visual Studio Code</span>
+            <span class="flex_cont control">
+                <span class="material-icons-outlined white minimize">remove</span>
+                <span class="material-icons-outlined maximize white">filter_none</span>
+                <span class="material-icons-outlined close white">close</span>    
+            </span>
+        </header>
+        <nav class="navbar cursordef">
+            <ul>
+                <li>File</li>
+                <li>Edit</li>
+                <li>Selection</li>
+                <li>View</li>
+                <li>Go</li>
+                <li>Run</li>
+                <li>Terminal</li>
+                <li>Help</li>
+            </ul>
+        </nav>
+        <main class="main">
+            <nav class="flex_cont icon">
+                <div class="icon1 cursorpoint">
+                    <span class="material-icons-outlined iconfont note">file_copy</span>
+                    <span class="material-icons-outlined iconfont"> search</span> 
+                    <span class="material-icons-outlined iconfont"> account_tree</span>
+                    <span class="material-icons-outlined iconfont"> play_arrow </span>  
+                    <span class="material-icons-outlined iconfont">widgets</span>
+                </div>
+                <div class="icon1 cursorpoint settings">
+                <span class="material-icons-outlined iconfont"> account_circle</span>
+                <span class="material-icons-outlined iconfont"> settings</span>
+                </div>
+            </nav>
+            <aside>
+                <div class="flex_cont exp">
+                    <span class="expstyle cursordef">EXPLORER</span>
+                    <span class="material-icons-outlined cursorpoint more">more_horiz </span>      
+                </div>
+                <div class="icon_dis">
+                    <div class="flex_cont folder cursorpoint">
+                        <div class="flex_cont">
+                            <span class="material-icons-outlined">expand_more</span>
+                            <span class="tabstyle">TAB-CONTENT</span>   
+                        </div> 
+                        <div class="flex_cont fontgap display">
+                            <span class="material-icons-outlined filefont">note_add</span>
+                            <span class="material-icons-outlined filefont">create_new_folder</span> 
+                            <span class="material-icons-outlined filefont"> refresh</span> 
+                            <span class="material-icons-outlined filefont">library_add_check</span>             
+                        </div> 
+                    </div>
+                    <div class="index asidefont cursorpoint">
+                        <p class="select indpad"><span style="color:rgb(71, 140, 196)">#</span>&nbsp; &nbsp;  index.css</p>
+                        <p class="indpad hovtab"><span style="color: rgb(206, 114, 81);"><></span>&nbsp;  index.html</p>
+                    </div>
+                </div>
+                <div class="out cursorpoint">
+                    <span class="material-icons-outlined">navigate_next</span>
+                    <span class="tabstyle">OUTLINE</span> 
+                </div>
+            </aside>
+            <main class="content asidefont">
+                <nav class="flex_cont tab">
+                    <ul class="cursorpoint">
+                        <li class="flex_cont exp closetab"><span style="color: rgb(206, 114, 81);"><></span>&nbsp;  index.html &nbsp;<span class="material-icons-outlined mini cross more">close</span></li>
+                        <li class="flex_cont exp type sepcolor cursorpoint"><span style="color: rgb(71, 140, 196);">#</span>&nbsp;  index.css &nbsp;<span class="material-icons-outlined mini more">close</span></li>   
+                    </ul>
+                    <ul class="cursorpoint">
+                        <li><span class="material-icons-outlined more">view_column</span></li>    
+                        <li><span class="material-icons-outlined more">more_horiz</span></li>   
+                    </ul>
+                </nav>
+                <main class="type cursortext">
+                    <p class="color indpad cursordef typecol"><span class="cursorpoint"><span style="color: rgb(71, 140, 196);">#</span>&nbsp;  index.css &nbsp;</span></p>
+                </main>
+            </main>
+        </main>
+        <footer class="flex_cont color">
+            <div class="flex_cont footer1 cursorpoint foothov">
+                <span class="material-icons-outlined mini">highlight_off </span>
+                <span>0</span>   
+                <span class="material-icons-outlined mini"> report_problem</span>
+                <span>0</span>     
+            </div>
+            <div class="flex_cont footer1 footer2">
+                <span class="cursorpoint foothov">Ln1,Col1 </span> 
+                <span class="cursorpoint foothov">Spaces:4</span>
+                <span class="cursorpoint foothov">  UTF-8 </span> 
+                <span class="cursorpoint foothov">LF</span>
+                <span class="cursorpoint foothov"> HTML  </span>
+                <span class="flex_cont cursorpoint foothov"><span class="material-icons-outlined mini">podcasts</span>&nbsp;Go Live</span>
+                <span class="flex_cont cursorpoint foothov"><span class="material-icons-outlined mini">done_all</span>&nbsp;Prettier</span>
+                <span class="material-icons-outlined mini cursorpoint foothov">contact_mail</span>
+                <span class="material-icons-outlined mini cursorpoint foothov"> notification_add </span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
