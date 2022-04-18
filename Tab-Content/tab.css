@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 10px;
+}
+body{
+    height: 100vh;
+}
+.container{
+    display: grid;  
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 3rem;
+}
+.tab{
+    display: flex;
+    background-color: rgb(26, 174, 223);
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    position:absolute;
+    top:4rem;
+    left: 0;
+}
+.content1{
+    display: none;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+}
+.content2{
+    display: none;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+}
+.content3{
+    display: none;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 0.5rem;
+}
+.tab1:hover, .tab2:hover, .tab3:hover{
+    cursor: pointer;
+    background-color: rgb(131, 207, 233) ;
+}
+.tab1:hover h2, .tab2:hover h2, .tab3:hover h2{
+    font-size: 2.5rem;
+}
+.tab1:hover +.content1, .tab2:hover +.content2, .tab3:hover +.content3{
+    display: grid;
+    
+}
+.imgdetail{
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+h2{
+    font-size: 2rem;
+}
+h3{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.5rem;
+}
