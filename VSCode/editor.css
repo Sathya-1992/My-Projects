@@ -12,10 +12,40 @@
 .main{
     display: grid;
     grid-template-columns: auto 1fr 6fr;
+    min-height: 0;
 }
 .content{
     display: grid;
     grid-template-rows: auto 1fr;
+    min-height: 0;
+}
+.filename{
+    display: none;
+    grid-template-rows: auto 1fr;
+    background-color: var(--content);
+    min-height: 0;
+}
+.overflow{
+    overflow-y: scroll;
+}
+.horoverflow{
+    overflow-x: auto;
+}
+.mainarea{
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+}
+.main1{
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+}
+.typearea{
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+.numberarea{
+    display: grid;
+    grid-auto-rows: minmax(1.2rem, auto);
 }
 .flex_cont{
     display:flex;
@@ -35,11 +65,30 @@
     --circle:rgb(20,122,204);
     --folder:rgb(37,37,38);
     --out_color:rgb(37,37,38);
+    --outborder: #444343;
     --more:rgb(54, 53, 53);
     --indhov:rgb(46, 45, 45);
+    --fileshadow:rgba(0, 0, 0, 0.829);
     --foothov:rgb(65, 153, 224);
     --iconhov:white;
     --sepcolor:white;
+    --elements:#569cd6;
+    --attributes:#9cdcfe;
+    --cssattributes:#9cdcfe;
+    --seperator:#d4d4d4;
+    --tag:#808080;
+    --value:#ce9178;
+    --number:#858585;
+    --numunit:#b5cea8;
+    --cssclassname:#d7ba7d;
+    --repeat:#d4d4d4;
+    --rgbcolor:#d4d4d4;
+    --comments:#67914f;
+    --commonline:#918e8e;
+    --scrollborder:#918e8e;
+    --scrollthumb:#393939;
+    --scrollthumbhov:#424242;
+    --colorborder:white;
 }
 .light{
     --header:rgb(51,51,51);
@@ -54,11 +103,55 @@
     --circle:rgb(181,137,0);
     --folder:rgb(217,212,197);
     --out_color:rgb(209,203,184);
+    --outborder: rgb(209,203,184);
     --more:rgb(226, 219, 195);
     --indhov:rgb(243, 230, 191);
+    --fileshadow: rgba(207, 203, 203, 0.829);
     --foothov:rgb(247, 243, 233);
     --iconhov:rgba(0, 0, 0, 0.74);
     --sepcolor:rgba(0, 0, 0, 0.842);
+    --elements:#4e8bd3;
+    --attributes:#93a1a1;
+    --cssattributes:#88a163;
+    --seperator:#817b83 ;
+    --tag:#808080 ;
+    --value:#4aa3a8;
+    --number: #307893;
+    --numunit: #d55882;
+    --cssclassname: #b7b3ab;
+    --repeat: #3095d8;
+    --rgbcolor: #3095d8 ;
+    --comments: #b4b0a7;
+    --commonline:#eef1ef;
+    --scrollborder:#eef1ef;
+    --scrollthumb: #b4b0a7;
+    --scrollthumbhov:#8b8b8a;
+    --colorborder:black;
+}
+:target + #css {
+    display: none;
+}
+#css, :target{
+    display: grid;
+}
+
+.contentfontsize{
+    font-size: var(--fontsize);
+}
+.smallfont{
+    --fontsize:0.7rem;
+}
+.normalfont{
+    --fontsize:0.9rem;
+}
+.mediumfont{
+    --fontsize:1.4rem;
+}
+.largefont{
+    --fontsize:1.9rem;
+}
+.largerfont{
+    --fontsize:2.4rem;
 }
 header{
     background-color: var(--header);
@@ -125,7 +218,7 @@ ul{
 }
 .note{
     color: var(--font_color) !important;
-    border-left: 0.15rem solid white;
+    border-left: 0.15rem solid var(--iconhov);
 }
 .icon1{
     display: flex;
@@ -202,6 +295,9 @@ aside{
 .indpad{
     padding: 0.2rem 1.3rem;
 }
+.filepad{
+    padding: 0rem 0.5rem;
+}
 .hovtab:hover{
     background-color: var(--indhov);
 }
@@ -211,12 +307,14 @@ aside{
 .out{
     display: flex;
     align-items: center;
-    border-top: 0.1rem solid gray;
+    border-top: thin solid var(--outborder);
     background-color: var(--out_color);
 }
 .tab{
     background-color: var(--tabbar);
     gap:1rem;
+}
+.tabcolor{
     color:rgb(131,131,131);
 }
 .sepcolor{
@@ -230,9 +328,6 @@ aside{
 }
 .typecol:hover{
     color: var(--sepcolor);
-}
-.type{
-    background-color: var(--content);
 }
 .htmlfile{
     color: rgb(206, 114, 81);
@@ -253,4 +348,173 @@ footer{
 }
 .foothov:hover{
     background-color: var(--foothov);
+}
+.elements{
+    color: var(--elements);
+}
+.cssattributes{
+    color: var(--cssattributes);
+}
+.attributes{
+    color: var(--attributes);
+}
+.seperator{
+    color: var(--seperator);
+}
+.tag{
+    color: var(--tag);
+}
+.value{
+    color:var(--value);
+}
+.number{
+    color:var(--number);
+}
+.numunit{
+    color:var(--numunit);
+}
+.rgbcolor{
+    color: var(--rgbcolor);
+}
+.classname{
+    color: var(--cssclassname);
+}
+.repeat{
+    color: var(--repeat);
+}
+.comments{
+    color: var(--comments);
+}
+.horflex{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0rem 1.7rem;
+}
+.aside{
+    padding:0.1rem;
+    overflow: hidden;
+}
+.scale{
+    transform: scale(0.2,0.2);
+    transform-origin: 0% 0%; 
+    position: fixed;
+}
+::-webkit-scrollbar {
+    width: 0.9rem;
+}
+::-webkit-scrollbar-track {
+    background: var(--content); 
+    border-left: thin inset var(--scrollborder);
+    border-top: thin inset var(--scrollborder);
+    border-bottom: thin inset var(--scrollborder);
+}
+::-webkit-scrollbar-thumb {
+    visibility: hidden;
+    background: var(--scrollthumb); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollthumbhov); 
+}
+.mainarea:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+.address{
+    display: flex;
+    align-items: center;
+}
+.head{
+    grid-area: 4/1/9/2;
+}
+.body{
+    grid-area: 11/1/span 68/span 1;
+}
+.div1{
+    grid-area: 2/1/span 66/span 1;
+}
+.div2{
+    grid-area: 2/1/span 64/span 1;
+}
+.div3{
+    grid-area: 2/1/span 12/span 1;
+}
+.div4{
+    grid-area: 16/1/span 12/span 1;
+}
+.div5{
+    grid-area:30/1/span 4/span 1;
+}
+.div6{
+    grid-area:36/1/span 4/span 1;
+}
+.div7{
+    grid-area:42/1/span 4/span 1;
+}
+.div8{
+    grid-area:48/1/span 4/span 1;
+}
+.div9{
+    grid-area: 54/1/span 4/span 1;
+}
+.div10{
+    grid-area: 60/1/span 4/span 1;
+}
+.commonline{
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    border-left: thin inset var(--commonline);
+}
+.smallcont{
+    grid-area: 1/2/2/3;
+    display: grid;
+    grid-auto-rows: minmax(1.2rem, auto);
+}
+.shadowbox{
+    box-shadow: 0rem 0.1rem 0.1rem var(--fileshadow);
+}
+.mainpad{
+    padding: 0.3rem 0rem;
+}
+
+.allelements{
+    grid-area: 2/1/span 3/span 1;
+}
+.cssbody{
+    grid-area: 7/1/span 5/span 1;
+}
+.csscontainer{
+    grid-area: 15/1/span 5/span 1;
+}
+.colorbox{
+    display: inline-block;
+    height: 0.7rem;
+    width: 0.7rem;
+    border:thin solid var(--colorborder);
+}
+.green{
+    background-color: rgb(73,165,11);
+}
+.color1{
+    background-color: white;
+}
+.color2{
+    background-color: rgb(45,212,148);
+}
+.cssfirst{
+    grid-area: 22/1/span 5/span 1;
+}
+.a1{
+    grid-area: 35/1/span 5/span 1;
+}
+.a2{
+    grid-area: 42/1/span 5/span 1;
+}
+.a3{
+    grid-area: 49/1/span 4/span 1;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+a:hover{
+    color: var(--iconhov);
 }
