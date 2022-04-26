@@ -8,6 +8,7 @@
     height: 100vh;
     grid-template-rows: auto auto 1fr auto;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    white-space: nowrap;
 }
 .main{
     display: grid;
