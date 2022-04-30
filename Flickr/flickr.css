@@ -1,0 +1,408 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-size: 1.5rem;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+}
+.grid{
+    display: grid;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
+.flexjustify{
+    justify-content: space-between;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    white-space: nowrap;
+}
+.toplayout{
+    grid-template-rows: auto auto auto auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+header{
+    background-color: rgb(31,32,34);
+    color: white;
+}
+.headerpad{
+    padding: 0.8rem 0rem;
+}
+.marginwidth{
+    width: 80%;
+    margin: auto;
+}
+ul{
+    list-style: none;
+    gap: 1rem;
+}
+.logo{
+    width: 3rem;
+    transform: scale(2.5);
+}
+.word{
+    width: 7.3rem;
+    object-fit: cover;
+}
+.searchbox{
+    width: 36rem;
+    background-color: rgb(210,210,211);
+    border-radius: 0.2rem;
+}
+input:focus{
+    outline: none;
+}
+.searchalign{
+    padding: 0rem 0.5rem;
+    color: rgb(84,84,84);
+}
+.search{
+    width: 32rem;
+    padding: 0.95rem 0rem;
+    background-color: rgb(210,210,211);
+    border: none;
+} 
+.signup{
+    background-color: rgb(39,143,220);
+    border: none;
+    border-radius: 0.4rem;
+    color: white;
+    padding: 0.65rem 2.2rem;
+    font-size: 1.5rem;
+    font-weight:600;
+}
+.navbarback{
+    background-color: rgb(251, 251, 251);
+    color:rgb(111,111,111);
+}
+.headergap{
+    gap:3.5rem;
+}
+.spriteimg{
+    background-image: url(./Image/icons-87310c47.png);
+}
+.upload {
+    background-position: 13.6rem 7.8rem;
+}
+.headergap1{
+    gap: 2.7rem;
+}
+.navgap{
+    gap:1rem;
+}
+.navborder{
+    border-bottom: thin solid rgb(220,220,220);
+}
+.navbar{
+    padding: 1.4rem 2.2rem;
+}
+.colorgap{
+    gap:0.4rem;
+}
+.colornavgap{
+    gap: 4rem;
+}
+.navcolor{
+    color: rgb(159,159,159);
+}
+.selectnav, .navhov:hover{
+    color: rgb(0,0,0);
+    border-bottom: medium solid rgb(42,146,220);
+}
+.colorbox{
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 0.3rem;
+}
+.color1{
+    background-color: rgb(234,78,20);
+}
+.color2{
+    background-color: rgb(162,70,21);
+}
+.color3{
+    background-color: rgb(238,120,10);
+}
+.color4{
+    background-color: rgb(240,157,155);
+}
+.color5{
+    background-color: rgb(251,235,13);
+}
+.color6{
+    background-color: rgb(252,207,0);
+}
+.color7{
+    background-color: rgb(144,226,0);
+}
+.color8{
+    background-color: rgb(94,173,3);
+}
+.color9{
+    background-color: rgb(76,179,212);
+}
+.color10{
+    background-color: rgb(0,98,198);
+}
+.color11{
+    background-color: rgb(146,92,185);
+}
+.color12{
+    background-color: rgb(233,98,147);
+}
+.color13{
+    border: thin solid rgb(156,156,156);
+    background-color: rgb(255,255,255);
+}
+.color14{
+    background-color: rgb(124,124,124);
+}
+.color15{
+    background-color: rgb(0,0,0);
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.commonspr{
+    width: 3rem;
+    height: 2.5rem;
+    background-size: 52rem;
+}
+.blkwhite{
+    background-position: 16.5rem 7.8rem;
+}
+.shallow {
+    background-position: 25.7rem 7.8rem;
+}
+.minimalist {
+    background-position: 22.7rem 7.8rem;
+}
+.patterns {
+    background-position: 19.6rem 7.8rem;
+}
+.toggle{
+    width: 2.6rem;
+    height: 1.6rem;
+    background-position: 66.7rem 19.8rem;
+    background-size: 52rem;
+} 
+.lastnavcolor{
+    background-color: rgb(243,245,246);
+}
+.lastnav{
+    font-size: 1.3rem;
+}
+.iconcolor{
+    color: rgb(115,123,128);
+}
+.share{
+    width: 2rem;
+    height: 1.8rem;
+    background-position: 50rem 47.8rem;
+    background-size: 450px;
+}
+.sharegap{
+    gap:0.8rem;
+}
+.commongrid{
+    background-size: 540px;
+    width: 1.8rem;
+    height: 2rem;
+}
+.thumbnail {
+    background-position: 32.7rem 1.7rem;
+}
+.justified{
+    background-position: 35.6rem 5.25rem;
+}
+.tile{
+    background-position: 82.4rem 5.2rem;
+}
+.viewgap{
+    gap:1.5rem;
+}
+.mainpad{
+    padding: 4rem 0rem;
+}
+.maincont{
+    grid-template-rows: 1fr auto;
+    gap: 4rem;
+}
+.viewstyle{
+    padding: 1rem 0rem;
+    font-size: 1.7rem;
+}
+.everycolor{
+    color:rgb(39,33,36);
+}
+.viewcolor{
+    color: rgb(20,117,195);
+}
+.viewcolor:hover{
+    text-decoration: underline;
+}
+.marginval{
+    margin-top: 15rem;
+}
+.imgdetail{
+    grid-template-rows: auto 1fr;
+}
+.imagecont{
+    grid-template-columns: repeat(24,1fr);
+    grid-auto-rows: minmax(3rem,1fr);
+    gap: 0.5rem;
+}
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.box1{
+    grid-area: 1/1/2/5;
+}
+.box2{
+    grid-area: 1/5/2/10;
+}
+.box3{
+    grid-area: 1/10/2/14;
+}
+.box4{
+    grid-area: 1/14/2/18;
+}
+.box5{
+    grid-area: 1/18/2/25;
+}
+.box6{
+    grid-area: 2/1/3/4;
+}
+.box7{
+    grid-area: 2/4/3/11;
+}
+.box8{
+    grid-area: 2/11/3/15;
+}
+.box9{
+    grid-area: 2/15/3/21;
+}
+.box10{
+    grid-area: 2/21/3/25;
+}
+.box11{
+    grid-area: 3/1/4/6;
+}
+.box12{
+    grid-area: 3/6/4/9;
+}
+.box13{
+    grid-area: 3/9/4/14;
+}
+.box14{
+    grid-area: 3/14/4/20;
+}
+.box15{
+    grid-area: 3/20/4/25;
+}
+.box16{
+    grid-area: 4/1/5/5;
+}
+.box17{
+    grid-area: 4/5/5/9;
+} 
+.box18{
+    grid-area: 4/9/5/15;
+}
+.box19{
+    grid-area: 4/15/5/21;
+}
+.box20{
+    grid-area: 4/21/5/25;
+}
+.box21{
+    grid-area: 5/1/6/6;
+}
+.box22{
+    grid-area: 5/6/6/12;
+}
+.box23{
+    grid-area: 5/12/6/18;
+}
+.box24{
+    grid-area: 5/18/6/25;
+}
+.box25{
+    grid-area: 6/1/7/7;
+}
+.box26{
+    grid-area: 6/7/7/15;
+}
+.box27{
+    grid-area: 6/15/7/20;
+}
+.box28{
+    grid-area: 6/20/7/25;
+}
+.justcen{
+    justify-self: center;
+    align-self: center;
+}
+.load{
+    padding: 0.8rem 1.5rem;
+    background-color: rgb(151,158,162);
+    border: none;
+    border-radius: 0.3rem;
+    color: rgb(254,251,231);
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+footer{
+    grid-template-rows: auto auto auto;
+    background-color: rgb(33,33,36);
+}
+.end{
+    justify-content: flex-end;
+}
+.footermargin{
+    width: 60%;
+    margin: auto;
+    font-size: 1.3rem;
+}
+.footerdes{
+    border-bottom: thin solid rgb(56,56,58);
+    color: rgb(255,255,255);
+}
+.footerdes1{
+    color: rgb(157,157,166);
+}
+.footerpad{
+    padding: 1.7rem 0rem;
+}
+.facebook{
+    background-position: 61.7rem 31.8rem;
+}
+.twitter{
+    background-position: 62.1rem 40.7rem;
+}
+.camera{
+    background-position: 62.3rem 29.7rem;
+}
+.cursorpoint{
+    cursor: pointer;
+}
+.cursorhov:hover{
+    color: rgb(157,157,166);
+    cursor: pointer;
+}
