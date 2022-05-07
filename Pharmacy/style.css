@@ -20,6 +20,10 @@ body{
 .inputpad{
     padding: 0.5rem;
 }
+.container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
 .box{
     width: 50rem;
     height: 50rem;
@@ -71,3 +75,27 @@ body{
 .containerStyle{
     background-color: rgb(185, 123, 46);
 }
+.formlayout{
+    padding: 5rem;
+}
+#billform{
+    display: none;
+    border: 0.1rem solid black;   
+    font-size: 2rem;
+}
+#billButton{
+    display: none;
+}
+#error{
+    display: none;
+    color: red;
+}
+.blinkContainer{
+    background-color: red;
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
