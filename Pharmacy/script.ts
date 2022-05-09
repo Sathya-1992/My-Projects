@@ -34,6 +34,7 @@ var medicineName : HTMLElement;
 var medicineCapacity : HTMLElement;
 var medicineQuantity : HTMLElement;
 var blinkContainer : HTMLElement;
+var listContainer : HTMLElement;
 /**
  * Initial function.
  */
@@ -47,6 +48,7 @@ var blinkContainer : HTMLElement;
    medicineName = document.getElementById("medName");
    medicineCapacity = document.getElementById("medCapacity");
    medicineQuantity = document.getElementById("medQuantity");
+   listContainer = document.getElementById("listContainer");
    searchMedicineInput.addEventListener("keypress",function(event){
     if(event.key === "Enter"){
       event.preventDefault();
@@ -110,7 +112,7 @@ function findMedicineDetail(searchWord:string) : Medicine{
  */
 function highlightRack(){
   if(activeRack){
-    container.classList.remove("containerStyle");
+    container && container.classList.remove("containerStyle");
     billForm.style.display = "none";
   }
   searchWord  = (searchMedicineInput as HTMLInputElement).value;
@@ -121,19 +123,22 @@ function highlightRack(){
   else{
     activeRack = searchWord;
     containerDetails  = findMedicineDetail(searchWord);
-    var rackId :string = containerDetails.rack;
-    var medicineId :string = containerDetails.id;
-    var shelfId :string = containerDetails.shelf;
-    for(var i=0;i<rackDetails.length;i++){
-      if(rackId===rackDetails[i]){
-        document.getElementById(rackDetails[i]).style.display = "grid";
-        container = document.getElementById(medicineId);
-        container.classList.add("containerStyle");
-        pathDetail.innerHTML = "Medicine Path : "+rackId+" - "+shelfId+" - "+medicineId;
-        billingButton.style.display = "flex";
-      }
-      else{
-        document.getElementById(rackDetails[i]).style.display = "none";
+    if(containerDetails){
+      var rackId :string = containerDetails.rack;
+      var medicineId :string = containerDetails.id;
+      var shelfId :string = containerDetails.shelf;
+      for(var i=0;i<rackDetails.length;i++){
+        if(rackId===rackDetails[i]){
+          document.getElementById(rackDetails[i]).style.display = "grid";
+          container = document.getElementById(medicineId);
+          container && container.classList.add("containerStyle");
+          pathDetail.innerHTML = "Medicine Path : "+rackId+" - "+shelfId+" - "+medicineId;
+          billingButton.style.display = "flex";
+          pathDetail.style.display = "flex";
+        }
+        else{
+          document.getElementById(rackDetails[i]).style.display = "none";
+        }
       }
     }
   }
@@ -144,11 +149,12 @@ function highlightRack(){
  */
 function clearDetails(){
   (searchMedicineInput as HTMLInputElement).value = '';
-  container.classList.remove("containerStyle"); 
+  container && container.classList.remove("containerStyle"); 
   pathDetail.style.display = "none";
   billingButton.style.display = "none";
   billForm.style.display = "none";
   errorValue.style.display = "none";
+  listContainer.style.display = "none";
   for(var i=0;i<rackDetails.length;i++){
     document.getElementById(rackDetails[i]).style.display = "grid";
   }
@@ -183,8 +189,9 @@ function salesMedicine(){
     medicineQuantity.innerHTML = containerDetails.availableQuantity+'';
     var validateQuantity = (30 * containerDetails.capacity)/100;
     if(containerDetails.availableQuantity < validateQuantity){
-      validateMedicineQuantity(containerDetails.id);
+      blinkAlert(containerDetails.id);
     }
+    showMedicineList();
   }
   (salesMedicineQuantity as HTMLInputElement).value = '';
 }
@@ -194,7 +201,45 @@ function salesMedicine(){
  * Blink the container which is in below 30% of its capacity.
  */
 
-function validateMedicineQuantity(containerId : string){
+function blinkAlert(containerId : string){
   blinkContainer = document.getElementById(containerId);
   blinkContainer.classList.add("blinkContainer");
+}
+/**
+ * To show all medicine name and its available quantity.
+ */
+function showMedicineList(){
+  listContainer.style.display = "grid";
+  var headerHtml = "<div class='listHeader boldText'><div class='listStyle flex'>Medicine Name</div><div class='listStyle flex'>Available Quantity<span class='material-icons-outlined iconpad' onclick='sortMedicineListAscending()' title='Ascending Order'>arrow_upward</span><span class='material-icons-outlined iconpad' onclick='sortMedicineListDescending()' title='Descending Order'>arrow_downward</span></div></div>";
+  var contentHtml = "<div class='medicineList'>";
+  for(var i=0; i<medicines.length; i++){
+    var medicineName = medicines[i].name;
+    var availQuantity = medicines[i].availableQuantity.toString();
+    var validateQuantity = (30 * medicines[i].capacity)/100;
+    var minimumQuantityClass = "";
+    if(medicines[i].availableQuantity < validateQuantity){
+      minimumQuantityClass = "minimumQuantity";
+    }
+    contentHtml += "<div class='listHeader'><div class='listStyle flex "+minimumQuantityClass+"'>"+medicineName+"</div><div class='listStyle flex "+minimumQuantityClass+"'>"+availQuantity+"</div></div>"
+  }
+  contentHtml += "</div>";
+  listContainer.innerHTML = headerHtml + contentHtml;
+}
+/**
+ * Sort medicine details by available quantity (Ascending).
+ */
+function sortMedicineListAscending(){
+  medicines.sort(function(a,b){
+    return a.availableQuantity - b.availableQuantity;
+  });
+  showMedicineList();
+}
+/**
+ * Sort medicine details by available quantity (Descending).
+ */
+function sortMedicineListDescending(){
+  medicines.sort(function(a,b){
+    return b.availableQuantity - a.availableQuantity;
+  });
+  showMedicineList();
 }

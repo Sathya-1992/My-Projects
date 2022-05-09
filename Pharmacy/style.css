@@ -7,29 +7,29 @@ html{
     font-size: 10px;
 }
 body{
-    width: 100vw;
+    font-size: 2rem;
+}
+.fullContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     height: 100vh;
-    padding: 5rem;
+    width: 100vw;
+    padding: 2rem;
 }
 .search{
     display: flex;
     justify-content: center;
-    font-size: 2rem;
     gap: 2rem;
 }
 .inputpad{
     padding: 0.5rem;
-}
-.container{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
 }
 .box{
     width: 50rem;
     height: 50rem;
     position:absolute;
     background-color: #a09c9c;
-    color: white;
     font-size: 1.5rem;
 }
 .rack1{
@@ -68,6 +68,8 @@ body{
 }
 .medicineBox{
     border: 0.2rem solid #5b4e4e;
+}
+.flex{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,15 +78,18 @@ body{
     background-color: rgb(185, 123, 46);
 }
 .formlayout{
-    padding: 5rem;
+    padding: 2rem;
 }
 #billform{
     display: none;
+    grid-area: 1/2/2/3;
     border: 0.1rem solid black;   
-    font-size: 2rem;
 }
 #billButton{
     display: none;
+}
+.container{
+    grid-area: 2/1/3/2;
 }
 #error{
     display: none;
@@ -99,3 +104,37 @@ body{
       visibility: hidden;
     }
   }
+.createList{
+    grid-area: 2/2/3/3;
+    padding: 2rem 7rem;
+}
+#listContainer{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 60rem;
+}
+.listHeader{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border-bottom: 1px solid #5b4e4e;
+}
+.medicineList{
+    display: grid;
+    grid-auto-rows: auto;
+    background-color: rgb(160,156,156);
+    overflow-y: scroll;
+}
+.boldText{
+    font-weight: bold;
+    background-color: rgb(132 129 129);
+}
+.listStyle{
+    padding: 0.5rem;
+}
+.minimumQuantity{
+    background-color: red;
+}
+.iconpad{
+    padding: 0rem 1rem;
+    cursor: pointer;
+}

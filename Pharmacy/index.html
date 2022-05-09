@@ -4,179 +4,187 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <title>Pharmacy</title>
 </head>
 <body>
-    <div class="search">
-      <div>Enter the Medicine Name : <input class="inputpad" type="text" id="searchMedicine"></div>
-      <button class="inputpad" onclick="highlightRack()" id="searchBtn">Search</button>
-      <button class="inputpad" onclick="clearDetails()">Clear</button>
-      <button class="inputpad" id="billButton" onclick="billingForm()">Billing</button>
-    </div><br><br>
-    <div class="search" id="path"></div>
+  <div class="fullContainer">
+    <div>
+      <div class="search">
+        <div>Enter the Medicine Name : <input class="inputpad" type="text" id="searchMedicine"></div>
+        <button class="inputpad" onclick="highlightRack()" id="searchBtn">Search</button>
+        <button class="inputpad" onclick="clearDetails()">Clear</button>
+        <button class="inputpad" id="medicineList" onclick="showMedicineList()">Show Medicines List</button>
+        <button class="inputpad" id="billButton" onclick="billingForm()">Billing</button>
+      </div><br><br>
+      <div class="search" id="path"></div>
+    </div>  
+    <div class="formlayout" id="billform">
+      Medicine Name : <span id="medName"></span><br>
+      Capacity      : <span id="medCapacity"></span><br>
+      Available Quantity : <span id="medQuantity"></span><br><br>
+      Enter the quantity to sale : <input class="inputpad" type="number" id="salesQuantity">
+      <button class="inputpad" onclick="salesMedicine()" id="submitSalesBtn">Submit</button>
+      <p id="error"></p>
+    </div>
     <div class="container">
-      <div>
         <div class="box rack1 rackborder rackcontainer" id="rack_1" title="rack_1">
-          <div class="shelf" id="shelf_1" title="rack_1 - shelf_1">
-            <div class="medicineBox" id="medicine_1">Stavudine</div>
-            <div class="medicineBox" id="medicine_2">Sucralfate</div>
-            <div class="medicineBox" id="medicine_3">Sugammadex</div>
-            <div class="medicineBox" id="medicine_4">Abacavir</div>
-            <div class="medicineBox" id="medicine_5">Acyclovir</div>
+          <div class="shelf" id="shelf_1" title="Rack 1 ( Shelf 1 )">
+            <div class="medicineBox flex" id="medicine_1">Stavudine</div>
+            <div class="medicineBox flex" id="medicine_2">Sucralfate</div>
+            <div class="medicineBox flex" id="medicine_3">Sugammadex</div>
+            <div class="medicineBox flex" id="medicine_4">Abacavir</div>
+            <div class="medicineBox flex" id="medicine_5">Acyclovir</div>
           </div>
-          <div class="shelf" id="shelf_2" title="rack_1 - shelf_2">
-            <div class="medicineBox" id="medicine_6">Alemtuzumab</div>
-            <div class="medicineBox" id="medicine_7">Alendronate</div>
-            <div class="medicineBox" id="medicine_8">Allopurinol</div>
-            <div class="medicineBox" id="medicine_9">Amifostine</div>
-            <div class="medicineBox" id="medicine_10">Amikacin</div>
+          <div class="shelf" id="shelf_2" title="Rack 1 ( Shelf 2 )">
+            <div class="medicineBox flex" id="medicine_6">Alemtuzumab</div>
+            <div class="medicineBox flex" id="medicine_7">Alendronate</div>
+            <div class="medicineBox flex" id="medicine_8">Allopurinol</div>
+            <div class="medicineBox flex" id="medicine_9">Amifostine</div>
+            <div class="medicineBox flex" id="medicine_10">Amikacin</div>
           </div>
-          <div class="shelf" id="shelf_3" title="rack_1 - shelf_3">
-            <div class="medicineBox" id="medicine_11">Aminocaproic Acid"</div>
-            <div class="medicineBox" id="medicine_12">Amitriptyline</div>
-            <div class="medicineBox" id="medicine_13">Amlodipine</div>
-            <div class="medicineBox" id="medicine_14">Amoxicillin</div>
-            <div class="medicineBox" id="medicine_15">Paracetamol</div>
+          <div class="shelf" id="shelf_3" title="Rack 1 ( Shelf 3 )">
+            <div class="medicineBox flex" id="medicine_11">Aminocaproic Acid"</div>
+            <div class="medicineBox flex" id="medicine_12">Amitriptyline</div>
+            <div class="medicineBox flex" id="medicine_13">Amlodipine</div>
+            <div class="medicineBox flex" id="medicine_14">Amoxicillin</div>
+            <div class="medicineBox flex" id="medicine_15">Paracetamol</div>
           </div>
-          <div class="shelf" id="shelf_4" title="rack_1 - shelf_4">
-            <div class="medicineBox" id="medicine_16">Amphotericin</div>
-            <div class="medicineBox" id="medicine_17">Ampicillin</div>
-            <div class="medicineBox" id="medicine_18">Baclofen</div>
-            <div class="medicineBox" id="medicine_19">Bleomycin</div>
-            <div class="medicineBox" id="medicine_20">Bortezomib</div>
+          <div class="shelf" id="shelf_4" title="Rack 1 ( Shelf 4 )">
+            <div class="medicineBox flex" id="medicine_16">Amphotericin</div>
+            <div class="medicineBox flex" id="medicine_17">Ampicillin</div>
+            <div class="medicineBox flex" id="medicine_18">Baclofen</div>
+            <div class="medicineBox flex" id="medicine_19">Bleomycin</div>
+            <div class="medicineBox flex" id="medicine_20">Bortezomib</div>
           </div>
         </div>
         <div class="box rack2 rackborder rackcontainer" id="rack_2" title="rack_2">
-          <div class="shelf" id="shelf_1" title="rack_2 - shelf_1">
-            <div class="medicineBox" id="medicine_21">Bosentan</div>
-            <div class="medicineBox" id="medicine_22">Busulfan</div>
-            <div class="medicineBox" id="medicine_23">Calcium</div>
-            <div class="medicineBox" id="medicine_24">Captopril</div>
-            <div class="medicineBox" id="medicine_25">Carbamazepine</div>
+          <div class="shelf" id="shelf_1" title="Rack 2 ( Shelf 1 )">
+            <div class="medicineBox flex" id="medicine_21">Bosentan</div>
+            <div class="medicineBox flex" id="medicine_22">Busulfan</div>
+            <div class="medicineBox flex" id="medicine_23">Calcium</div>
+            <div class="medicineBox flex" id="medicine_24">Captopril</div>
+            <div class="medicineBox flex" id="medicine_25">Carbamazepine</div>
           </div>
-          <div class="shelf" id="shelf_2" title="rack_2 - shelf_2">
-            <div class="medicineBox" id="medicine_26">Carboplatin</div>
-            <div class="medicineBox" id="medicine_27">Carmustine</div>
-            <div class="medicineBox" id="medicine_28">Cefaclor</div>
-            <div class="medicineBox" id="medicine_29">Cefepime</div>
-            <div class="medicineBox" id="medicine_30">Cefixime</div>
+          <div class="shelf" id="shelf_2" title="Rack 2 ( Shelf 2 )">
+            <div class="medicineBox flex" id="medicine_26">Carboplatin</div>
+            <div class="medicineBox flex" id="medicine_27">Carmustine</div>
+            <div class="medicineBox flex" id="medicine_28">Cefaclor</div>
+            <div class="medicineBox flex" id="medicine_29">Cefepime</div>
+            <div class="medicineBox flex" id="medicine_30">Cefixime</div>
           </div>
-          <div class="shelf" id="shelf_3" title="rack_2 - shelf_3">
-            <div class="medicineBox" id="medicine_31">Ceftazidime</div>
-            <div class="medicineBox" id="medicine_32">Cefuroxime</div>
-            <div class="medicineBox" id="medicine_33">Celecoxib</div>
-            <div class="medicineBox" id="medicine_34">Cephalexin</div>
-            <div class="medicineBox" id="medicine_35">Cidofovir</div>
+          <div class="shelf" id="shelf_3" title="Rack 2 ( Shelf 3 )">
+            <div class="medicineBox flex" id="medicine_31">Ceftazidime</div>
+            <div class="medicineBox flex" id="medicine_32">Cefuroxime</div>
+            <div class="medicineBox flex" id="medicine_33">Celecoxib</div>
+            <div class="medicineBox flex" id="medicine_34">Cephalexin</div>
+            <div class="medicineBox flex" id="medicine_35">Cidofovir</div>
           </div>
-          <div class="shelf" id="shelf_4" title="rack_2 - shelf_4">
-            <div class="medicineBox" id="medicine_36">Cisplatin</div>
-            <div class="medicineBox" id="medicine_37">Cladribine</div>
-            <div class="medicineBox" id="medicine_38">Clarithromycin</div>
-            <div class="medicineBox" id="medicine_39">Clindamycin</div>
-            <div class="medicineBox" id="medicine_40">Clobazam</div>
+          <div class="shelf" id="shelf_4" title="Rack 2 ( Shelf 4 )">
+            <div class="medicineBox flex" id="medicine_36">Cisplatin</div>
+            <div class="medicineBox flex" id="medicine_37">Cladribine</div>
+            <div class="medicineBox flex" id="medicine_38">Clarithromycin</div>
+            <div class="medicineBox flex" id="medicine_39">Clindamycin</div>
+            <div class="medicineBox flex" id="medicine_40">Clobazam</div>
           </div>
         </div>
         <div class="box rack3 rackborder rackcontainer" id="rack_3" title="rack_3">
-          <div class="shelf" id="shelf_1" title="rack_3 - shelf_1">
-            <div class="medicineBox" id="medicine_41">Clofarabine</div>
-            <div class="medicineBox" id="medicine_42">Codeine</div>
-            <div class="medicineBox" id="medicine_43">Crizanlizumab</div>
-            <div class="medicineBox" id="medicine_44">Crizotinib</div>
-            <div class="medicineBox" id="medicine_45">Cyclobenzaprine</div>
+          <div class="shelf" id="shelf_1" title="Rack 3 ( Shelf 1 )">
+            <div class="medicineBox flex" id="medicine_41">Clofarabine</div>
+            <div class="medicineBox flex" id="medicine_42">Codeine</div>
+            <div class="medicineBox flex" id="medicine_43">Crizanlizumab</div>
+            <div class="medicineBox flex" id="medicine_44">Crizotinib</div>
+            <div class="medicineBox flex" id="medicine_45">Cyclobenzaprine</div>
           </div>
-          <div class="shelf" id="shelf_2" title="rack_3 - shelf_2">
-            <div class="medicineBox" id="medicine_46">Cyclophosphamide</div>
-            <div class="medicineBox" id="medicine_47">Cyclosporine</div>
-            <div class="medicineBox" id="medicine_48">Cyproheptadine</div>
-            <div class="medicineBox" id="medicine_49">Cytarabine</div>
-            <div class="medicineBox" id="medicine_50">Dacarbazine</div>
+          <div class="shelf" id="shelf_2" title="Rack 3 ( Shelf 2 )">
+            <div class="medicineBox flex" id="medicine_46">Cyclophosphamide</div>
+            <div class="medicineBox flex" id="medicine_47">Cyclosporine</div>
+            <div class="medicineBox flex" id="medicine_48">Cyproheptadine</div>
+            <div class="medicineBox flex" id="medicine_49">Cytarabine</div>
+            <div class="medicineBox flex" id="medicine_50">Dacarbazine</div>
           </div>
-          <div class="shelf" id="shelf_3" title="rack_3 - shelf_3">
-            <div class="medicineBox" id="medicine_51">Dactinomycin</div>
-            <div class="medicineBox" id="medicine_52">Dapsone</div>
-            <div class="medicineBox" id="medicine_53">Diclofenac</div>
-            <div class="medicineBox" id="medicine_54">Didanosine</div>
-            <div class="medicineBox" id="medicine_55">Dinutuximab</div>
+          <div class="shelf" id="shelf_3" title="Rack 3 ( Shelf 3 )">
+            <div class="medicineBox flex" id="medicine_51">Dactinomycin</div>
+            <div class="medicineBox flex" id="medicine_52">Dapsone</div>
+            <div class="medicineBox flex" id="medicine_53">Diclofenac</div>
+            <div class="medicineBox flex" id="medicine_54">Didanosine</div>
+            <div class="medicineBox flex" id="medicine_55">Dinutuximab</div>
           </div>
-          <div class="shelf" id="shelf_4" title="rack_3 - shelf_4">
-            <div class="medicineBox" id="medicine_56">Dobutamine</div>
-            <div class="medicineBox" id="medicine_57">Dopamine</div>
-            <div class="medicineBox" id="medicine_58">Dornase alfa</div>
-            <div class="medicineBox" id="medicine_59">Doxorubicin</div>
-            <div class="medicineBox" id="medicine_60">Dronabinol</div>
+          <div class="shelf" id="shelf_4" title="Rack 3 ( Shelf 4 )">
+            <div class="medicineBox flex" id="medicine_56">Dobutamine</div>
+            <div class="medicineBox flex" id="medicine_57">Dopamine</div>
+            <div class="medicineBox flex" id="medicine_58">Dornase alfa</div>
+            <div class="medicineBox flex" id="medicine_59">Doxorubicin</div>
+            <div class="medicineBox flex" id="medicine_60">Dronabinol</div>
           </div>
         </div>
         <div class="box rack4 rackborder rackcontainer" id="rack_4" title="rack_4">
-          <div class="shelf" id="shelf_1" title="rack_4 - shelf_1">
-            <div class="medicineBox" id="medicine_61">Enalapril</div>
-            <div class="medicineBox" id="medicine_62">Enoxaparin</div>
-            <div class="medicineBox" id="medicine_63">Erlotinib</div>
-            <div class="medicineBox" id="medicine_64">Erythromycin</div>
-            <div class="medicineBox" id="medicine_65">Erythropoietin</div>
+          <div class="shelf" id="shelf_1" title="Rack 4 ( Shelf 1 )">
+            <div class="medicineBox flex" id="medicine_61">Enalapril</div>
+            <div class="medicineBox flex" id="medicine_62">Enoxaparin</div>
+            <div class="medicineBox flex" id="medicine_63">Erlotinib</div>
+            <div class="medicineBox flex" id="medicine_64">Erythromycin</div>
+            <div class="medicineBox flex" id="medicine_65">Erythropoietin</div>
           </div>
-          <div class="shelf" id="shelf_2" title="rack_4 - shelf_2">
-            <div class="medicineBox" id="medicine_66">Etonogestrel</div>
-            <div class="medicineBox" id="medicine_67">Etoposide</div>
-            <div class="medicineBox" id="medicine_68">Etravirine</div>
-            <div class="medicineBox" id="medicine_69">Famciclovir</div>
-            <div class="medicineBox" id="medicine_70">Famotidine</div>
+          <div class="shelf" id="shelf_2" title="Rack 4 ( Shelf 2 )">
+            <div class="medicineBox flex" id="medicine_66">Etonogestrel</div>
+            <div class="medicineBox flex" id="medicine_67">Etoposide</div>
+            <div class="medicineBox flex" id="medicine_68">Etravirine</div>
+            <div class="medicineBox flex" id="medicine_69">Famciclovir</div>
+            <div class="medicineBox flex" id="medicine_70">Famotidine</div>
           </div>
-          <div class="shelf" id="shelf_3" title="rack_4 - shelf_3">
-            <div class="medicineBox" id="medicine_71">Fidaxomicin</div>
-            <div class="medicineBox" id="medicine_72">Fluconazole</div>
-            <div class="medicineBox" id="medicine_73">Fludarabine</div>
-            <div class="medicineBox" id="medicine_74">Fluorouracil</div>
-            <div class="medicineBox" id="medicine_75">Foscarnet</div>
+          <div class="shelf" id="shelf_3" title="Rack 4 ( Shelf 3 )">
+            <div class="medicineBox flex" id="medicine_71">Fidaxomicin</div>
+            <div class="medicineBox flex" id="medicine_72">Fluconazole</div>
+            <div class="medicineBox flex" id="medicine_73">Fludarabine</div>
+            <div class="medicineBox flex" id="medicine_74">Fluorouracil</div>
+            <div class="medicineBox flex" id="medicine_75">Foscarnet</div>
           </div>
-          <div class="shelf" id="shelf_4" title="rack_4 - shelf_4">
-            <div class="medicineBox" id="medicine_76">Furosemide</div>
-            <div class="medicineBox" id="medicine_77">Gabapentin</div>
-            <div class="medicineBox" id="medicine_78">Ganciclovir</div>
-            <div class="medicineBox" id="medicine_79">Gefitinib</div>
-            <div class="medicineBox" id="medicine_80">Gemcitabine</div>
+          <div class="shelf" id="shelf_4" title="Rack 4 ( Shelf 4 )">
+            <div class="medicineBox flex" id="medicine_76">Furosemide</div>
+            <div class="medicineBox flex" id="medicine_77">Gabapentin</div>
+            <div class="medicineBox flex" id="medicine_78">Ganciclovir</div>
+            <div class="medicineBox flex" id="medicine_79">Gefitinib</div>
+            <div class="medicineBox flex" id="medicine_80">Gemcitabine</div>
           </div>
         </div>
         <div class="box rack5 rackborder rackcontainer" id="rack_5" title="rack_5">
-          <div class="shelf" id="shelf_1" title="rack_5 - shelf_1">
-            <div class="medicineBox" id="medicine_81">Granisetron</div>
-            <div class="medicineBox" id="medicine_82">Hydrocortisone</div>
-            <div class="medicineBox" id="medicine_83">Hydromorphone</div>
-            <div class="medicineBox" id="medicine_84">Hydroxyurea</div>
-            <div class="medicineBox" id="medicine_85">Irinotecan</div>
+          <div class="shelf" id="shelf_1" title="Rack 5 ( Shelf 1 )">
+            <div class="medicineBox flex" id="medicine_81">Granisetron</div>
+            <div class="medicineBox flex" id="medicine_82">Hydrocortisone</div>
+            <div class="medicineBox flex" id="medicine_83">Hydromorphone</div>
+            <div class="medicineBox flex" id="medicine_84">Hydroxyurea</div>
+            <div class="medicineBox flex" id="medicine_85">Irinotecan</div>
           </div>
-          <div class="shelf" id="shelf_2" title="rack_5 - shelf_2">
-            <div class="medicineBox" id="medicine_86">Furosemide</div>
-            <div class="medicineBox" id="medicine_87">Gabapentin</div>
-            <div class="medicineBox" id="medicine_88">Ganciclovir</div>
-            <div class="medicineBox" id="medicine_89">Gefitinib</div>
-            <div class="medicineBox" id="medicine_90">Gemcitabine</div>
+          <div class="shelf" id="shelf_2" title="Rack 5 ( Shelf 2 )">
+            <div class="medicineBox flex" id="medicine_86">Furosemide</div>
+            <div class="medicineBox flex" id="medicine_87">Gabapentin</div>
+            <div class="medicineBox flex" id="medicine_88">Ganciclovir</div>
+            <div class="medicineBox flex" id="medicine_89">Gefitinib</div>
+            <div class="medicineBox flex" id="medicine_90">Gemcitabine</div>
           </div>
-          <div class="shelf" id="shelf_3" title="rack_5 - shelf_3">
-            <div class="medicineBox" id="medicine_91">Lomustine</div>
-            <div class="medicineBox" id="medicine_92">Lorazepam</div>
-            <div class="medicineBox" id="medicine_93">Lorlatinib</div>
-            <div class="medicineBox" id="medicine_94">Melphalan</div>
-            <div class="medicineBox" id="medicine_95">Meperidine</div>
+          <div class="shelf" id="shelf_3" title="Rack 5 ( Shelf 3 )">
+            <div class="medicineBox flex" id="medicine_91">Lomustine</div>
+            <div class="medicineBox flex" id="medicine_92">Lorazepam</div>
+            <div class="medicineBox flex" id="medicine_93">Lorlatinib</div>
+            <div class="medicineBox flex" id="medicine_94">Melphalan</div>
+            <div class="medicineBox flex" id="medicine_95">Meperidine</div>
           </div>
-          <div class="shelf" id="shelf_4" title="rack_5 - shelf_4">
-            <div class="medicineBox" id="medicine_96">Mercaptopurine</div>
-            <div class="medicineBox" id="medicine_97">Meropenem</div>
-            <div class="medicineBox" id="medicine_98">Mesna</div>
-            <div class="medicineBox" id="medicine_99">Methadone</div>
-            <div class="medicineBox" id="medicine_100">Methotrexate</div>
+          <div class="shelf" id="shelf_4" title="Rack 5 ( Shelf 4 )">
+            <div class="medicineBox flex" id="medicine_96">Mercaptopurine</div>
+            <div class="medicineBox flex" id="medicine_97">Meropenem</div>
+            <div class="medicineBox flex" id="medicine_98">Mesna</div>
+            <div class="medicineBox flex" id="medicine_99">Methadone</div>
+            <div class="medicineBox flex" id="medicine_100">Methotrexate</div>
           </div>
         </div>
-      </div>
-      <div class="formlayout" id="billform">
-        Medicine Name : <span id="medName"></span><br>
-        Capacity      : <span id="medCapacity"></span><br>
-        Available Quantity : <span id="medQuantity"></span><br><br>
-        Enter the quantity to sale : <input class="inputpad" type="number" id="salesQuantity">
-        <button class="inputpad" onclick="salesMedicine()" id="submitSalesBtn">Submit</button>
-        <p id="error"></p>
-      </div>
     </div>
-    <script type="text/javascript" src="./script.js"></script>
+    <div class="createList">
+      <div id="listContainer"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
