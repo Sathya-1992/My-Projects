@@ -129,7 +129,7 @@ function highlightRack(){
       var shelfId :string = containerDetails.shelf;
       for(var i=0;i<rackDetails.length;i++){
         if(rackId===rackDetails[i]){
-          document.getElementById(rackDetails[i]).style.display = "grid";
+          document.getElementById(rackDetails[i]).classList.add("selectedRack");
           container = document.getElementById(medicineId);
           container && container.classList.add("containerStyle");
           pathDetail.innerHTML = "Medicine Path : "+rackId+" - "+shelfId+" - "+medicineId;
@@ -137,7 +137,8 @@ function highlightRack(){
           pathDetail.style.display = "flex";
         }
         else{
-          document.getElementById(rackDetails[i]).style.display = "none";
+          document.getElementById(rackDetails[i]).classList.add("otherRack");
+          document.getElementById(rackDetails[i]).classList.remove("selectedRack");
         }
       }
     }
@@ -156,7 +157,8 @@ function clearDetails(){
   errorValue.style.display = "none";
   listContainer.style.display = "none";
   for(var i=0;i<rackDetails.length;i++){
-    document.getElementById(rackDetails[i]).style.display = "grid";
+    document.getElementById(rackDetails[i]).classList.remove("otherRack");
+
   }
 }
 
