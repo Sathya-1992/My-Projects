@@ -208,7 +208,7 @@ body{
 }
 .contFront{
     transform: rotateY(0deg) translateZ(100px);
-    opacity: 0.5;
+    opacity: 0.05;
 }
 .contBack{
     transform: rotateY(180deg) translateZ(100px);
