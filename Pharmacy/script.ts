@@ -114,6 +114,9 @@ function highlightRack(){
   if(activeRack){
     container && container.classList.remove("containerStyle");
     billForm.style.display = "none";
+    for(var i=0;i<rackDetails.length;i++){
+      document.getElementById(rackDetails[i]).classList.remove("moveRack");
+    }
   }
   searchWord  = (searchMedicineInput as HTMLInputElement).value;
   if(searchWord===""){
@@ -129,16 +132,15 @@ function highlightRack(){
       var shelfId :string = containerDetails.shelf;
       for(var i=0;i<rackDetails.length;i++){
         if(rackId===rackDetails[i]){
-          document.getElementById(rackDetails[i]).classList.add("selectedRack");
           container = document.getElementById(medicineId);
           container && container.classList.add("containerStyle");
           pathDetail.innerHTML = "Medicine Path : "+rackId+" - "+shelfId+" - "+medicineId;
           billingButton.style.display = "flex";
           pathDetail.style.display = "flex";
+          break;
         }
         else{
-          document.getElementById(rackDetails[i]).classList.add("otherRack");
-          document.getElementById(rackDetails[i]).classList.remove("selectedRack");
+          document.getElementById(rackDetails[i]).classList.add("moveRack");
         }
       }
     }
@@ -157,8 +159,7 @@ function clearDetails(){
   errorValue.style.display = "none";
   listContainer.style.display = "none";
   for(var i=0;i<rackDetails.length;i++){
-    document.getElementById(rackDetails[i]).classList.remove("otherRack");
-
+    document.getElementById(rackDetails[i]).classList.remove("moveRack");
   }
 }
 
