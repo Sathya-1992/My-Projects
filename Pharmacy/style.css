@@ -97,7 +97,7 @@ body{
     padding: 0rem 1rem;
     cursor: pointer;
 }
-.moveRack{
+.otherRack{
     animation: rack-out-left 2s linear both;
 }
 @keyframes rack-out-left{
@@ -112,7 +112,7 @@ body{
     --frontWidth : 60rem;
     --frontHeight : 60rem;
     --sideWidth : 20rem;
-    --contFrontWidth : 10rem;
+    --contFrontWidth : 10.5rem;
     --contFrontHeight : 12rem;
     --contSideWidth : 20rem; 
 }
@@ -208,9 +208,11 @@ body{
 }
 .contFront{
     transform: rotateY(0deg) translateZ(100px);
+    opacity: 0.5;
 }
 .contBack{
     transform: rotateY(180deg) translateZ(100px);
+    font-size: 1.6rem;
 }
 .contLeftRight{
     height: var(--contFrontHeight);

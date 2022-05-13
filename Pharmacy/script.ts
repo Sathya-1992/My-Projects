@@ -115,7 +115,8 @@ function highlightRack(){
     container && container.classList.remove("containerStyle");
     billForm.style.display = "none";
     for(var i=0;i<rackDetails.length;i++){
-      document.getElementById(rackDetails[i]).classList.remove("moveRack");
+      document.getElementById(rackDetails[i]).classList.remove("otherRack");
+  
     }
   }
   searchWord  = (searchMedicineInput as HTMLInputElement).value;
@@ -140,7 +141,7 @@ function highlightRack(){
           break;
         }
         else{
-          document.getElementById(rackDetails[i]).classList.add("moveRack");
+          document.getElementById(rackDetails[i]).classList.add("otherRack");
         }
       }
     }
@@ -159,7 +160,8 @@ function clearDetails(){
   errorValue.style.display = "none";
   listContainer.style.display = "none";
   for(var i=0;i<rackDetails.length;i++){
-    document.getElementById(rackDetails[i]).classList.remove("moveRack");
+    document.getElementById(rackDetails[i]).classList.remove("otherRack");
+
   }
 }
 
