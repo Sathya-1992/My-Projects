@@ -105,6 +105,9 @@ function highlightRack() {
         billForm.style.display = "none";
         for (var i = 0; i < rackDetails.length; i++) {
             document.getElementById(rackDetails[i]).classList.remove("otherRack");
+            for (var j = 0; j < rackDetails.length; j++) {
+                document.getElementById(rackDetails[i]).classList.remove("rackMove" + j);
+            }
         }
     }
     searchWord = searchMedicineInput.value;
@@ -119,17 +122,27 @@ function highlightRack() {
             var rackId = containerDetails.rack;
             var medicineId = containerDetails.id;
             var shelfId = containerDetails.shelf;
+            var j = 2;
             for (var i = 0; i < rackDetails.length; i++) {
+                var rackClass = "rack" + i;
                 if (rackId === rackDetails[i]) {
                     container = document.getElementById(medicineId);
                     container && container.classList.add("containerStyle");
                     pathDetail.innerHTML = "Medicine Path : " + rackId + " - " + shelfId + " - " + medicineId;
                     billingButton.style.display = "flex";
                     pathDetail.style.display = "flex";
-                    break;
+                    document.getElementById(rackDetails[i]).classList.add("rackMove1", "rackMoveTime");
+                    var selected = true;
                 }
                 else {
-                    document.getElementById(rackDetails[i]).classList.add("otherRack");
+                    if (selected) {
+                        document.getElementById(rackDetails[i]).classList.add("rackMove" + j, "rackMoveTime");
+                        console.log("value:" + j);
+                        j++;
+                    }
+                    else {
+                        document.getElementById(rackDetails[i]).classList.add("otherRack");
+                    }
                 }
             }
         }
@@ -148,6 +161,9 @@ function clearDetails() {
     listContainer.style.display = "none";
     for (var i = 0; i < rackDetails.length; i++) {
         document.getElementById(rackDetails[i]).classList.remove("otherRack");
+        for (var j = 0; j < rackDetails.length; j++) {
+            document.getElementById(rackDetails[i]).classList.remove("rackMove" + j);
+        }
     }
 }
 /**

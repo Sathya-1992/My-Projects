@@ -208,7 +208,7 @@ body{
 }
 .contFront{
     transform: rotateY(0deg) translateZ(100px);
-    opacity: 0.05;
+    opacity: 0.5;
 }
 .contBack{
     transform: rotateY(180deg) translateZ(100px);
@@ -234,18 +234,21 @@ body{
 .contBottom{
     transform: rotateX(-90deg) translateZ(20px);
 }
-.rack5{
+.rack5, .rackMove5{
     transform: translate3d(150px,0px,-1000px);
 }
-.rack4{
+.rack4, .rackMove4{
     transform: translate3d(150px,0px,-700px);
 }
-.rack3{
+.rack3, .rackMove3{
     transform: translate3d(150px,0px,-400px);
 }
-.rack2{
+.rack2, .rackMove2{
     transform: translate3d(150px,0px,-100px);
 }
-.rack1{
+.rack1, .rackMove1{
     transform: translate3d(150px,0px,200px);
+}
+.rackMoveTime{
+    transition: 2s;
 }
