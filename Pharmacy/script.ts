@@ -35,6 +35,7 @@ var medicineCapacity : HTMLElement;
 var medicineQuantity : HTMLElement;
 var blinkContainer : HTMLElement;
 var listContainer : HTMLElement;
+var root;
 /**
  * Initial function.
  */
@@ -49,6 +50,7 @@ var listContainer : HTMLElement;
    medicineCapacity = document.getElementById("medCapacity");
    medicineQuantity = document.getElementById("medQuantity");
    listContainer = document.getElementById("listContainer");
+   root = document.documentElement;
    searchMedicineInput.addEventListener("keypress",function(event){
     if(event.key === "Enter"){
       event.preventDefault();
@@ -148,10 +150,11 @@ function highlightRack(){
         else{
           if(selected){
             document.getElementById(rackDetails[i]).classList.add("rackMove"+j,"rackMoveTime");
-            console.log("value:"+j);
             j++;
           }
           else{
+            var time = 0.5*(i+2);
+            root.style.setProperty("--moveDuration", +time+"s");
             document.getElementById(rackDetails[i]).classList.add("otherRack");
           }
         }
