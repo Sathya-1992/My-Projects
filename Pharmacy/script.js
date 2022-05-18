@@ -27,6 +27,7 @@ var medicineQuantity;
 var blinkContainer;
 var listContainer;
 var root;
+var currentRack;
 /**
  * Initial function.
  */
@@ -102,15 +103,13 @@ function findMedicineDetail(searchWord) {
  * To highlight the rack and container which is mathched with searchMedicine.
  */
 function highlightRack() {
+    if (currentRack) {
+        removeRackClass();
+    }
     if (activeRack) {
         container && container.classList.remove("containerStyle");
         billForm.style.display = "none";
-        for (var i = 0; i < rackDetails.length; i++) {
-            document.getElementById(rackDetails[i]).classList.remove("otherRack");
-            for (var j = 0; j < rackDetails.length; j++) {
-                document.getElementById(rackDetails[i]).classList.remove("rackMove" + j);
-            }
-        }
+        removeRackClass();
     }
     searchWord = searchMedicineInput.value;
     if (searchWord === "") {
@@ -134,6 +133,7 @@ function highlightRack() {
                     billingButton.style.display = "flex";
                     pathDetail.style.display = "flex";
                     document.getElementById(rackDetails[i]).classList.add("rackMove1", "rackMoveTime");
+                    currentRack = rackDetails[i];
                     var selected = true;
                 }
                 else {
@@ -162,6 +162,13 @@ function clearDetails() {
     billForm.style.display = "none";
     errorValue.style.display = "none";
     listContainer.style.display = "none";
+    removeRackClass();
+    currentRack = rackDetails[0];
+}
+/**
+ * To remove added classlist.
+ */
+function removeRackClass() {
     for (var i = 0; i < rackDetails.length; i++) {
         document.getElementById(rackDetails[i]).classList.remove("otherRack");
         for (var j = 0; j < rackDetails.length; j++) {
@@ -250,4 +257,84 @@ function sortMedicineListDescending() {
         return b.availableQuantity - a.availableQuantity;
     });
     showMedicineList();
+}
+/**
+ * To show previous racks of selected rack.
+ */
+function showPreviousRack() {
+    removeRackClass();
+    if (currentRack) {
+        if (currentRack === rackDetails[0]) {
+            alert("There is no previous rack.");
+        }
+        else {
+            var j = 2;
+            for (var i = 0; i < rackDetails.length; i++) {
+                if (currentRack === rackDetails[i]) {
+                    console.log("rackname:" + rackDetails[i - 1]);
+                    document.getElementById(rackDetails[i - 1]).classList.remove("otherRack");
+                    document.getElementById(rackDetails[i - 1]).classList.add("rackMove1", "rackMoveTime");
+                    currentRack = rackDetails[i - 1];
+                    document.getElementById(rackDetails[i]).classList.add("rackMove" + j, "rackMoveTime");
+                    j++;
+                    var select = true;
+                }
+                else {
+                    if (select) {
+                        document.getElementById(rackDetails[i]).classList.add("rackMove" + j, "rackMoveTime");
+                        j++;
+                    }
+                    else {
+                        document.getElementById(rackDetails[i]).classList.add("otherRack");
+                    }
+                }
+            }
+        }
+    }
+    else {
+        alert("There is no previous rack.");
+    }
+}
+/**
+ * To show next rack of current rack.
+ */
+function showNextRack() {
+    if (currentRack) {
+        if (currentRack === rackDetails[rackDetails.length - 1]) {
+            alert("There is no next rack.");
+        }
+        else {
+            removeRackClass();
+            var j = 2;
+            for (var i = 0; i < rackDetails.length; i++) {
+                if (currentRack === rackDetails[i]) {
+                    console.log("rackname:" + rackDetails[i + 1]);
+                    root.style.setProperty("--moveDuration", "1s");
+                    document.getElementById(rackDetails[i]).classList.add("otherRack");
+                    var select = true;
+                }
+                else {
+                    if (select) {
+                        if (moveNext) {
+                            document.getElementById(rackDetails[i]).classList.add("rackMove" + j, "rackMoveTime");
+                            j++;
+                        }
+                        else {
+                            document.getElementById(rackDetails[i]).classList.add("rackMove1", "rackMoveTime");
+                            currentRack = rackDetails[i];
+                            var moveNext = true;
+                        }
+                    }
+                    else {
+                        root.style.setProperty("--moveDuration", "1s");
+                        document.getElementById(rackDetails[i]).classList.add("otherRack");
+                    }
+                }
+            }
+        }
+    }
+    else {
+        currentRack = rackDetails[0];
+        showNextRack();
+    }
 }
