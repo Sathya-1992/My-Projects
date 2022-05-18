@@ -17,6 +17,8 @@ body{
     --contFrontHeight : 12rem;
     --contSideWidth : 20rem; 
     --moveDuration : 0s;
+    --distance : 1200;
+    --currentRack : 0; 
 }
 .fullContainer{
     display: grid;
@@ -77,14 +79,14 @@ body{
 .createList{
     grid-area: 2/2/3/3;
     padding: 2rem;
-    margin-left: -700px;
+    margin-left: -500px;
     z-index: 1; 
 }
 #listContainer{
     display: grid;
     grid-template-rows: auto 1fr;
     height: 60rem;
-    width: 50rem;
+    width: 40rem;
 }
 .listHeader{
     display: grid;
@@ -240,21 +242,21 @@ body{
 .contBottom{
     transform: rotateX(-90deg) translateZ(20px);
 }
-.rack5, .rackMove5{
-    transform: translate3d(150px,0px,-1200px);
+.rack1,.rack2,.rack3,.rack4,.rack5{
+    transition: 2s;
 }
-.rack4, .rackMove4{
-    transform: translate3d(150px,0px,-900px);
+.rack5{
+    transform: translate3d(150px,0px,calc(4*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 }
-.rack3, .rackMove3{
-    transform: translate3d(150px,0px,-600px);
+.rack4{
+    transform: translate3d(150px,0px,calc(3*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 }
-.rack2, .rackMove2{
-    transform: translate3d(150px,0px,-300px);
+.rack3{
+    transform: translate3d(150px,0px,calc(2*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 }
-.rack1, .rackMove1{
-    transform: translate3d(150px,0px,0px);
+.rack2{
+    transform: translate3d(150px,0px,calc(1*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 }
-.rackMoveTime{
-    transition: 2.5s;
-}
+.rack1{
+    transform: translate3d(150px,0px,calc(0*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
+} 

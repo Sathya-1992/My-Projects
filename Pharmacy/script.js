@@ -26,7 +26,7 @@ var medicineCapacity;
 var medicineQuantity;
 var blinkContainer;
 var listContainer;
-var root;
+var root = document.documentElement;
 var currentRack;
 /**
  * Initial function.
@@ -103,13 +103,9 @@ function findMedicineDetail(searchWord) {
  * To highlight the rack and container which is mathched with searchMedicine.
  */
 function highlightRack() {
-    if (currentRack) {
-        removeRackClass();
-    }
     if (activeRack) {
         container && container.classList.remove("containerStyle");
         billForm.style.display = "none";
-        removeRackClass();
     }
     searchWord = searchMedicineInput.value;
     if (searchWord === "") {
@@ -123,29 +119,15 @@ function highlightRack() {
             var rackId = containerDetails.rack;
             var medicineId = containerDetails.id;
             var shelfId = containerDetails.shelf;
-            var j = 2;
             for (var i = 0; i < rackDetails.length; i++) {
-                var rackClass = "rack" + i;
                 if (rackId === rackDetails[i]) {
                     container = document.getElementById(medicineId);
                     container && container.classList.add("containerStyle");
                     pathDetail.innerHTML = "Medicine Path : " + rackId + " - " + shelfId + " - " + medicineId;
                     billingButton.style.display = "flex";
                     pathDetail.style.display = "flex";
-                    document.getElementById(rackDetails[i]).classList.add("rackMove1", "rackMoveTime");
-                    currentRack = rackDetails[i];
-                    var selected = true;
-                }
-                else {
-                    if (selected) {
-                        document.getElementById(rackDetails[i]).classList.add("rackMove" + j, "rackMoveTime");
-                        j++;
-                    }
-                    else {
-                        var time = 0.5 * (i + 2);
-                        root.style.setProperty("--moveDuration", +time + "s");
-                        document.getElementById(rackDetails[i]).classList.add("otherRack");
-                    }
+                    currentRack = i;
+                    root.style.setProperty("--currentRack", currentRack.toString());
                 }
             }
         }
@@ -162,19 +144,8 @@ function clearDetails() {
     billForm.style.display = "none";
     errorValue.style.display = "none";
     listContainer.style.display = "none";
-    removeRackClass();
-    currentRack = rackDetails[0];
-}
-/**
- * To remove added classlist.
- */
-function removeRackClass() {
-    for (var i = 0; i < rackDetails.length; i++) {
-        document.getElementById(rackDetails[i]).classList.remove("otherRack");
-        for (var j = 0; j < rackDetails.length; j++) {
-            document.getElementById(rackDetails[i]).classList.remove("rackMove" + j);
-        }
-    }
+    currentRack = 0;
+    root.style.setProperty("--currentRack", currentRack.toString());
 }
 /**
  * Enable billing form and show the medicine details.
@@ -259,82 +230,38 @@ function sortMedicineListDescending() {
     showMedicineList();
 }
 /**
- * To show previous racks of selected rack.
+ * To navigate previous racks.
  */
 function showPreviousRack() {
-    removeRackClass();
     if (currentRack) {
-        if (currentRack === rackDetails[0]) {
+        if (currentRack === 0) {
             alert("There is no previous rack.");
         }
         else {
-            var j = 2;
-            for (var i = 0; i < rackDetails.length; i++) {
-                if (currentRack === rackDetails[i]) {
-                    console.log("rackname:" + rackDetails[i - 1]);
-                    document.getElementById(rackDetails[i - 1]).classList.remove("otherRack");
-                    document.getElementById(rackDetails[i - 1]).classList.add("rackMove1", "rackMoveTime");
-                    currentRack = rackDetails[i - 1];
-                    document.getElementById(rackDetails[i]).classList.add("rackMove" + j, "rackMoveTime");
-                    j++;
-                    var select = true;
-                }
-                else {
-                    if (select) {
-                        document.getElementById(rackDetails[i]).classList.add("rackMove" + j, "rackMoveTime");
-                        j++;
-                    }
-                    else {
-                        document.getElementById(rackDetails[i]).classList.add("otherRack");
-                    }
-                }
-            }
+            currentRack = currentRack - 1;
+            root.style.setProperty("--currentRack", currentRack.toString());
         }
     }
     else {
         alert("There is no previous rack.");
+        currentRack = 0;
     }
 }
 /**
- * To show next rack of current rack.
+ * To navigate next racks.
  */
 function showNextRack() {
     if (currentRack) {
-        if (currentRack === rackDetails[rackDetails.length - 1]) {
+        if (currentRack === rackDetails.length - 1) {
             alert("There is no next rack.");
         }
         else {
-            removeRackClass();
-            var j = 2;
-            for (var i = 0; i < rackDetails.length; i++) {
-                if (currentRack === rackDetails[i]) {
-                    console.log("rackname:" + rackDetails[i + 1]);
-                    root.style.setProperty("--moveDuration", "1s");
-                    document.getElementById(rackDetails[i]).classList.add("otherRack");
-                    var select = true;
-                }
-                else {
-                    if (select) {
-                        if (moveNext) {
-                            document.getElementById(rackDetails[i]).classList.add("rackMove" + j, "rackMoveTime");
-                            j++;
-                        }
-                        else {
-                            document.getElementById(rackDetails[i]).classList.add("rackMove1", "rackMoveTime");
-                            currentRack = rackDetails[i];
-                            var moveNext = true;
-                        }
-                    }
-                    else {
-                        root.style.setProperty("--moveDuration", "1s");
-                        document.getElementById(rackDetails[i]).classList.add("otherRack");
-                    }
-                }
-            }
+            currentRack = currentRack + 1;
+            root.style.setProperty("--currentRack", currentRack.toString());
         }
     }
     else {
-        currentRack = rackDetails[0];
-        showNextRack();
+        currentRack = 1;
+        root.style.setProperty("--currentRack", currentRack.toString());
     }
 }
