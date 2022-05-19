@@ -28,9 +28,21 @@ body{
     width: 100vw;
     padding: 2rem;
 }
+.searchBox{
+    border: 1px solid;
+    width: 1000px;
+    padding: 10px;
+    background-color: #f2e8cf;
+    z-index: 1;
+}
 .search{
     display: flex;
+    justify-content: center;
     gap: 2rem;
+}
+datalist{
+    height: 10rem;
+    overflow-y: auto;
 }
 .inputpad{
     padding: 0.5rem;
@@ -40,12 +52,26 @@ body{
     align-items: center;
     justify-content: center;
 }
-.containerStyle div{
-    background-color: rgb(185, 123, 46);
+.contStyle, .containerStyle div{
+    background-color: rgb(218,123,147);
+}
+.pathColor{
+    color: rgb(218,123,147);
+    font-weight: bold;
+}
+button{
+    background-color: rgb(126,104,90);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.5rem;
 }
 .formlayout{
     padding: 2rem;
+    width: 600px;
     margin-left: -70rem;
+    background-color: #f2e8cf;
 }
 #billform{
     display: none;
@@ -63,15 +89,24 @@ body{
     color: red;
 }
 .space{
-    padding-left: 30rem;
+    margin-top: -80px;
+    margin-left: -500px;
+    z-index: 1;
 }
 .blinkContainer{
-    animation: blink-animation 1s steps(5, start) infinite;
+    animation: blink-animation 1s linear infinite;
+    z-index: 1;
 }
 @keyframes blink-animation {
-    to {
-      visibility: hidden;
+    0% {
+      transform: scale(1);
     }
+    50%{
+        transform: scale(1.1);
+      }
+    100%{
+        transform: scale(1);
+      }
   }
 .blinkContainer div{
     background-color: red;
@@ -91,17 +126,17 @@ body{
 .listHeader{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    border-bottom: 1px solid #5b4e4e;
+    border-bottom: 1px solid rgb(194,185,176);
 }
 .medicineList{
     display: grid;
     grid-auto-rows: auto;
-    background-color: rgb(160,156,156);
+    background-image: linear-gradient(130deg, #AFD275, #f2e8cf);
     overflow-y: scroll;
 }
 .boldText{
     font-weight: bold;
-    background-color: rgb(132 129 129);
+    background-color: rgb(194,185,176);
 }
 .listStyle{
     padding: 0.5rem;
@@ -141,14 +176,14 @@ body{
 .cube{
     position: relative;
     transform-style: preserve-3d;
-    transform: translate3d(15px, 18px, 15px);
+    transform: translate3d(15px, 18px, 30px);
 }
 .face{
     position:absolute;
     border: 0.1rem solid black;
 }
 .rackBackground{
-    background-color: rgb(31, 207, 219);
+    background-color: #C2B9B0;
 }
 .frontBack{
     height: var(--frontHeight);
@@ -208,7 +243,7 @@ body{
     perspective-origin: right;
 } 
 .contBackground{
-    background-color: rgb(17, 0, 255);
+    background-color: #AFD275;
 }
 .contFrontBack{
     height: var(--contFrontHeight);
