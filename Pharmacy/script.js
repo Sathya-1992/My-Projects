@@ -210,8 +210,13 @@ function showMedicineList() {
         var availQuantity = medicines[i].availableQuantity.toString();
         var validateQuantity = (30 * medicines[i].capacity) / 100;
         var minimumQuantityClass = "";
-        if (medicines[i].name.toLowerCase() === searchWord.toLowerCase()) {
-            selectedMedicineClass = "contStyle";
+        if (searchWord) {
+            if (medicines[i].name.toLowerCase() === searchWord.toLowerCase()) {
+                selectedMedicineClass = "contStyle";
+            }
+            else {
+                selectedMedicineClass = "";
+            }
         }
         else {
             selectedMedicineClass = "";

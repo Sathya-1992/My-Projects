@@ -16,7 +16,6 @@ body{
     --contFrontWidth : 10.5rem;
     --contFrontHeight : 12rem;
     --contSideWidth : 20rem; 
-    --moveDuration : 0s;
     --distance : 1200;
     --currentRack : 0; 
 }
@@ -39,10 +38,6 @@ body{
     display: flex;
     justify-content: center;
     gap: 2rem;
-}
-datalist{
-    height: 10rem;
-    overflow-y: auto;
 }
 .inputpad{
     padding: 0.5rem;
@@ -148,17 +143,6 @@ button{
     padding: 0rem 1rem;
     cursor: pointer;
 }
-.otherRack{
-    animation: rack-out-left var(--moveDuration) linear both;
-}
-@keyframes rack-out-left{
-    0%{
-        transform: translateZ(1);
-    }
-    100%{
-        transform: translateZ(1000px);
-    }
-}
 .container{
     width: 100vw;
     height: 100vh;
@@ -226,15 +210,6 @@ button{
     height: var(--sideWidth);
     width: var(--frontWidth);
     background-color: blueviolet;
-}
-.shelf1{
-    transform: rotateX(-90deg) translateZ(50px);
-}
-.shelf2{
-    transform: rotateX(-90deg) translateZ(200px);
-}
-.shelf3{
-    transform: rotateX(-90deg) translateZ(350px);
 }
 .medBox{
     width: 12rem;
