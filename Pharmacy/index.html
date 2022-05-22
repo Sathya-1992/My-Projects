@@ -12,1126 +12,1125 @@
 <body>
   <div class="fullContainer">
     <div class="searchBox">
-      <div class="search">
+      <div class="search flex">
         <label for="medicine">Enter the Medicine Name :</label> 
-        <input type="text" list="medicine" class="inputpad searchMedicine">
-        <datalist id="medicine"></datalist>
+        <input type="text" class="inputpad searchMedicine">
         <button onclick="highlightRack()" id="searchBtn">Search</button>
         <button onclick="clearDetails()">Clear</button>
-        <button id="medicineList" onclick="showMedicineList()">Show Medicines List</button>
-        <button id="billButton" onclick="billingForm()">Billing</button>
       </div><br><br>
-      <div class="search pathColor" id="path"></div><br>
+      <div class="search flex pathColor" id="path"></div><br>
     </div>  
     <div class="formlayout" id="billform">
       Medicine Name : <span id="medName"></span><br>
       Capacity      : <span id="medCapacity"></span><br>
-      Available Quantity : <span id="medQuantity"></span><br><br>
+      Available Quantity : <span id="medQuantity"></span><br>
       Enter the quantity to sale : <input class="inputpad" type="number" id="salesQuantity">
       <button onclick="salesMedicine()" id="submitSalesBtn">Submit</button>
       <p id="error"></p>
     </div>
-    <div class="container">
-        <div class="space">
+    <div class="containerRack">
+        <div class="space flex search">
             <button onclick="showPreviousRack()">Previous Rack</button>
             <button onclick="showNextRack()">Next Rack</button>
         </div>
-        <div class="scene">
-            <div class="cube rack5" id="rack_5" title="rack_5">
-                <div class="face rackBackground frontBack front">
-                    <div class="shelf" title="Rack 5 ( Shelf 1 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_81" title="Granisetron">
-                                <div class="face contBackground contFrontBack contFront flex">Granisetron</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+        <div class="container">
+            <div class="scene">
+                <div class="cube rack5" id="rack_5" title="rack_5">
+                    <div class="face rackBackground frontBack front">
+                        <div class="shelf" title="Rack 5 ( Shelf 1 )">
+                            <div class="medBox" id="medicine_81" title="Granisetron">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Granisetron</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_82" title="Hydrocortisone">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Hydrocortisone</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_83" title="Hydromorphone">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Hydromorphone</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_84" title="Hydroxyurea">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Hydroxyurea</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_85" title="Irinotecan">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Irinotecan</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_82" title="Hydrocortisone">
-                                <div class="face contBackground contFrontBack contFront flex">Hydrocortisone</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 5 ( Shelf 2 )">
+                            <div class="medBox" id="medicine_86" title="Isotretinoin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Isotretinoin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_87" title="Itraconazole">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Itraconazole</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_88" title="Ketoconazole">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Ketoconazole</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_89" title="Levothyroxine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Levothyroxine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_90" title="Linezolid">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Linezolid</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_83" title="Hydromorphone">
-                                <div class="face contBackground contFrontBack contFront flex">Hydromorphone</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 5 ( Shelf 3 )">
+                            <div class="medBox" id="medicine_91" title="Lomustine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Lomustine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_92" title="Lorazepam">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Lorazepam</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_93" title="Lorlatinib">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Lorlatinib</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_94" title="Melphalan">
+                                <div class="cube"> 
+                                    <div class="face contBackground contFrontBack contFront flex">Melphalan</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_95" title="Meperidine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Meperidine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_84" title="Hydroxyurea">
-                                <div class="face contBackground contFrontBack contFront flex">Hydroxyurea</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 5 ( Shelf 4 )">
+                            <div class="medBox" id="medicine_96" title="Mercaptopurine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Mercaptopurine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_85" title="Irinotecan">
-                                <div class="face contBackground contFrontBack contFront flex">Irinotecan</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                            <div class="medBox" id="medicine_97" title="Meropenem">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Meropenem</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_98" title="Mesna">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Mesna</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_99" title="Methadone">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Methadone</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_100" title="Methotrexate">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Methotrexate</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="shelf" title="Rack 5 ( Shelf 2 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_86" title="Isotretinoin">
-                                <div class="face contBackground contFrontBack contFront flex">Isotretinoin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_87" title="Itraconazole">
-                                <div class="face contBackground contFrontBack contFront flex">Itraconazole</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_88" title="Ketoconazole">
-                                <div class="face contBackground contFrontBack contFront flex">Ketoconazole</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_89" title="Levothyroxine">
-                                <div class="face contBackground contFrontBack contFront flex">Levothyroxine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_90" title="Linezolid">
-                                <div class="face contBackground contFrontBack contFront flex">Linezolid</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 5 ( Shelf 3 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_91" title="Lomustine">
-                                <div class="face contBackground contFrontBack contFront flex">Lomustine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_92" title="Lorazepam">
-                                <div class="face contBackground contFrontBack contFront flex">Lorazepam</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_93" title="Lorlatinib">
-                                <div class="face contBackground contFrontBack contFront flex">Lorlatinib</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_94" title="Melphalan"> 
-                                <div class="face contBackground contFrontBack contFront flex">Melphalan</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_95" title="Meperidine">
-                                <div class="face contBackground contFrontBack contFront flex">Meperidine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 5 ( Shelf 4 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_96" title="Mercaptopurine">
-                                <div class="face contBackground contFrontBack contFront flex">Mercaptopurine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_97" title="Meropenem">
-                                <div class="face contBackground contFrontBack contFront flex">Meropenem</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_98" title="Mesna">
-                                <div class="face contBackground contFrontBack contFront flex">Mesna</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_99" title="Methadone">
-                                <div class="face contBackground contFrontBack contFront flex">Methadone</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_100" title="Methotrexate">
-                                <div class="face contBackground contFrontBack contFront flex">Methotrexate</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="face rackBackground frontBack back"></div>
+                    <div class="face rackBackground leftRight left"></div>
+                    <div class="face rackBackground leftRight right">Rack 5</div>
+                    <div class="face rackBackground topBottom top"></div>
+                    <div class="face rackBackground topBottom bottom"></div>
                 </div>
-                <div class="face rackBackground frontBack back"></div>
-                <div class="face rackBackground leftRight left"></div>
-                <div class="face rackBackground leftRight right">Rack 5</div>
-                <div class="face rackBackground topBottom top"></div>
-                <div class="face rackBackground topBottom bottom"></div>
             </div>
-        </div>
-        <div class="scene">
-            <div class="cube rack4" id="rack_4" title="rack_4">
-                <div class="face rackBackground frontBack front">
-                    <div class="shelf" title="Rack 4 ( Shelf 1 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_61" title="Enalapril">
-                                <div class="face contBackground contFrontBack contFront flex">Enalapril</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+            <div class="scene">
+                <div class="cube rack4" id="rack_4" title="rack_4">
+                    <div class="face rackBackground frontBack front">
+                        <div class="shelf" title="Rack 4 ( Shelf 1 )">
+                            <div class="medBox" id="medicine_61" title="Enalapril">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Enalapril</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_62" title="Enoxaparin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Enoxaparin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_63" title="Erlotinib">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Erlotinib</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_64" title="Erythromycin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Erythromycin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_65" title="Erythropoietin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Erythropoietin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_62" title="Enoxaparin">
-                                <div class="face contBackground contFrontBack contFront flex">Enoxaparin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 4 ( Shelf 2 )">
+                            <div class="medBox" id="medicine_66" title="Etonogestrel">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Etonogestrel</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_67" title="Etoposide">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Etoposide</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_68" title="Etravirine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Etravirine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_69" title="Famciclovir">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Famciclovir</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_70" title="Famotidine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Famotidine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_63" title="Erlotinib">
-                                <div class="face contBackground contFrontBack contFront flex">Erlotinib</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 4 ( Shelf 3 )">
+                            <div class="medBox" id="medicine_71" title="Fidaxomicin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Fidaxomicin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_72" title="Fluconazole">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Fluconazole</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_73" title="Fludarabine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Fludarabine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_74" title="Fluorouracil">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Fluorouracil</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_75" title="Foscarnet">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Foscarnet</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_64" title="Erythromycin">
-                                <div class="face contBackground contFrontBack contFront flex">Erythromycin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 4 ( Shelf 4 )">
+                            <div class="medBox" id="medicine_76" title="Furosemide">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Furosemide</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_65" title="Erythropoietin">
-                                <div class="face contBackground contFrontBack contFront flex">Erythropoietin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                            <div class="medBox" id="medicine_77" title="Gabapentin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Gabapentin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_78" title="Ganciclovir">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Ganciclovir</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_79" title="Gefitinib">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Gefitinib</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_80" title="Gemcitabine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Gemcitabine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="shelf" title="Rack 4 ( Shelf 2 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_66" title="Etonogestrel">
-                                <div class="face contBackground contFrontBack contFront flex">Etonogestrel</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_67" title="Etoposide">
-                                <div class="face contBackground contFrontBack contFront flex">Etoposide</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_68" title="Etravirine">
-                                <div class="face contBackground contFrontBack contFront flex">Etravirine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_69" title="Famciclovir">
-                                <div class="face contBackground contFrontBack contFront flex">Famciclovir</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_70" title="Famotidine">
-                                <div class="face contBackground contFrontBack contFront flex">Famotidine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 4 ( Shelf 3 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_71" title="Fidaxomicin">
-                                <div class="face contBackground contFrontBack contFront flex">Fidaxomicin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_72" title="Fluconazole">
-                                <div class="face contBackground contFrontBack contFront flex">Fluconazole</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_73" title="Fludarabine">
-                                <div class="face contBackground contFrontBack contFront flex">Fludarabine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_74" title="Fluorouracil">
-                                <div class="face contBackground contFrontBack contFront flex">Fluorouracil</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_75" title="Foscarnet">
-                                <div class="face contBackground contFrontBack contFront flex">Foscarnet</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 4 ( Shelf 4 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_76" title="Furosemide">
-                                <div class="face contBackground contFrontBack contFront flex">Furosemide</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_77" title="Gabapentin">
-                                <div class="face contBackground contFrontBack contFront flex">Gabapentin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_78" title="Ganciclovir">
-                                <div class="face contBackground contFrontBack contFront flex">Ganciclovir</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_79" title="Gefitinib">
-                                <div class="face contBackground contFrontBack contFront flex">Gefitinib</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_80" title="Gemcitabine">
-                                <div class="face contBackground contFrontBack contFront flex">Gemcitabine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="face rackBackground frontBack back"></div>
+                    <div class="face rackBackground leftRight left"></div>
+                    <div class="face rackBackground leftRight right">Rack 4</div>
+                    <div class="face rackBackground topBottom top"></div>
+                    <div class="face rackBackground topBottom bottom"></div>
                 </div>
-                <div class="face rackBackground frontBack back"></div>
-                <div class="face rackBackground leftRight left"></div>
-                <div class="face rackBackground leftRight right">Rack 4</div>
-                <div class="face rackBackground topBottom top"></div>
-                <div class="face rackBackground topBottom bottom"></div>
             </div>
-        </div>
-        <div class="scene">
-            <div class="cube rack3" id="rack_3" title="rack_3">
-                <div class="face rackBackground frontBack front">
-                    <div class="shelf" title="Rack 3 ( Shelf 1 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_41" title="Clofarabine">
-                                <div class="face contBackground contFrontBack contFront flex">Clofarabine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+            <div class="scene">
+                <div class="cube rack3" id="rack_3" title="rack_3">
+                    <div class="face rackBackground frontBack front">
+                        <div class="shelf" title="Rack 3 ( Shelf 1 )">
+                            <div class="medBox" id="medicine_41" title="Clofarabine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Clofarabine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_42" title="Codeine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Codeine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_43" title="Crizanlizumab">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Crizanlizumab</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_44" title="Crizotinib">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Crizotinib</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_45" title="Cyclobenzaprine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cyclobenzaprine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_42" title="Codeine">
-                                <div class="face contBackground contFrontBack contFront flex">Codeine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 3 ( Shelf 2 )">
+                            <div class="medBox" id="medicine_46" title="Cyclophosphamide">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cyclophosphamide</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_47" title="Cyclosporine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cyclosporine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_48" title="Cyproheptadine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cyproheptadine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_49" title="Cytarabine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cytarabine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_50" title="Dacarbazine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Dacarbazine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_43" title="Crizanlizumab">
-                                <div class="face contBackground contFrontBack contFront flex">Crizanlizumab</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 3 ( Shelf 3 )">
+                            <div class="medBox" id="medicine_51" title="Dactinomycin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Dactinomycin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_52" title="Dapsone">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Dapsone</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_53" title="Diclofenac">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Diclofenac</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_54" title="Didanosine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Didanosine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_55" title="Dinutuximab">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Dinutuximab</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_44" title="Crizotinib">
-                                <div class="face contBackground contFrontBack contFront flex">Crizotinib</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 3 ( Shelf 4 )">
+                            <div class="medBox" id="medicine_56" title="Dobutamine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Dobutamine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_45" title="Cyclobenzaprine">
-                                <div class="face contBackground contFrontBack contFront flex">Cyclobenzaprine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                            <div class="medBox" id="medicine_57" title="Dopamine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Dopamine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_58" title="Dornase alfa">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Dornase alfa</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_59" title="Doxorubicin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Doxorubicin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_60" title="Dronabinol">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Dronabinol</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="shelf" title="Rack 3 ( Shelf 2 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_46" title="Cyclophosphamide">
-                                <div class="face contBackground contFrontBack contFront flex">Cyclophosphamide</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_47" title="Cyclosporine">
-                                <div class="face contBackground contFrontBack contFront flex">Cyclosporine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_48" title="Cyproheptadine">
-                                <div class="face contBackground contFrontBack contFront flex">Cyproheptadine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_49" title="Cytarabine">
-                                <div class="face contBackground contFrontBack contFront flex">Cytarabine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_50" title="Dacarbazine">
-                                <div class="face contBackground contFrontBack contFront flex">Dacarbazine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 3 ( Shelf 3 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_51" title="Dactinomycin">
-                                <div class="face contBackground contFrontBack contFront flex">Dactinomycin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_52" title="Dapsone">
-                                <div class="face contBackground contFrontBack contFront flex">Dapsone</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_53" title="Diclofenac">
-                                <div class="face contBackground contFrontBack contFront flex">Diclofenac</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_54" title="Didanosine">
-                                <div class="face contBackground contFrontBack contFront flex">Didanosine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_55" title="Dinutuximab">
-                                <div class="face contBackground contFrontBack contFront flex">Dinutuximab</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 3 ( Shelf 4 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_56" title="Dobutamine">
-                                <div class="face contBackground contFrontBack contFront flex">Dobutamine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_57" title="Dopamine">
-                                <div class="face contBackground contFrontBack contFront flex">Dopamine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_58" title="Dornase alfa">
-                                <div class="face contBackground contFrontBack contFront flex">Dornase alfa</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_59" title="Doxorubicin">
-                                <div class="face contBackground contFrontBack contFront flex">Doxorubicin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_60" title="Dronabinol">
-                                <div class="face contBackground contFrontBack contFront flex">Dronabinol</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="face rackBackground frontBack back"></div>
+                    <div class="face rackBackground leftRight left"></div>
+                    <div class="face rackBackground leftRight right">Rack 3</div>
+                    <div class="face rackBackground topBottom top"></div>
+                    <div class="face rackBackground topBottom bottom"></div>
                 </div>
-                <div class="face rackBackground frontBack back"></div>
-                <div class="face rackBackground leftRight left"></div>
-                <div class="face rackBackground leftRight right">Rack 3</div>
-                <div class="face rackBackground topBottom top"></div>
-                <div class="face rackBackground topBottom bottom"></div>
             </div>
-        </div>
-        <div class="scene">
-            <div class="cube rack2" id="rack_2" title="rack_2">
-                <div class="face rackBackground frontBack front">
-                    <div class="shelf" title="Rack 2 ( Shelf 1 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_21" title="Bosentan">
-                                <div class="face contBackground contFrontBack contFront flex">Bosentan</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+            <div class="scene">
+                <div class="cube rack2" id="rack_2" title="rack_2">
+                    <div class="face rackBackground frontBack front">
+                        <div class="shelf" title="Rack 2 ( Shelf 1 )">
+                            <div class="medBox" id="medicine_21" title="Bosentan">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Bosentan</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_22" title="Busulfan">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Busulfan</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_23" title="Calcium">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Calcium</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_24" title="Captopril">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Captopril</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_25" title="Carbamazepine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Carbamazepine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_22" title="Busulfan">
-                                <div class="face contBackground contFrontBack contFront flex">Busulfan</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 2 ( Shelf 2 )">
+                            <div class="medBox" id="medicine_26" title="Carboplatin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Carboplatin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_27" title="Carmustine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Carmustine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_28" title="Cefaclor">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cefaclor</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_29" title="Cefepime">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cefepime</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_30" title="Cefixime">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cefixime</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_23" title="Calcium">
-                                <div class="face contBackground contFrontBack contFront flex">Calcium</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 2 ( Shelf 3 )">
+                            <div class="medBox" id="medicine_31" title="Ceftazidime">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Ceftazidime</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_32" title="Cefuroxime">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cefuroxime</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_33" title="Celecoxib">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Celecoxib</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_34" title="Cephalexin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cephalexin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_35" title="Cidofovir">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cidofovir</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_24" title="Captopril">
-                                <div class="face contBackground contFrontBack contFront flex">Captopril</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 2 ( Shelf 4 )">
+                            <div class="medBox" id="medicine_36" title="Cisplatin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cisplatin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_25" title="Carbamazepine">
-                                <div class="face contBackground contFrontBack contFront flex">Carbamazepine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                            <div class="medBox" id="medicine_37" title="Cladribine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Cladribine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_38" title="Clarithromycin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Clarithromycin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_39" title="Clindamycin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Clindamycin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_40" title="Clobazam">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Clobazam</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="shelf" title="Rack 2 ( Shelf 2 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_26" title="Carboplatin">
-                                <div class="face contBackground contFrontBack contFront flex">Carboplatin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_27" title="Carmustine">
-                                <div class="face contBackground contFrontBack contFront flex">Carmustine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_28" title="Cefaclor">
-                                <div class="face contBackground contFrontBack contFront flex">Cefaclor</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_29" title="Cefepime">
-                                <div class="face contBackground contFrontBack contFront flex">Cefepime</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_30" title="Cefixime">
-                                <div class="face contBackground contFrontBack contFront flex">Cefixime</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 2 ( Shelf 3 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_31" title="Ceftazidime">
-                                <div class="face contBackground contFrontBack contFront flex">Ceftazidime</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_32" title="Cefuroxime">
-                                <div class="face contBackground contFrontBack contFront flex">Cefuroxime</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_33" title="Celecoxib">
-                                <div class="face contBackground contFrontBack contFront flex">Celecoxib</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_34" title="Cephalexin">
-                                <div class="face contBackground contFrontBack contFront flex">Cephalexin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_35" title="Cidofovir">
-                                <div class="face contBackground contFrontBack contFront flex">Cidofovir</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 2 ( Shelf 4 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_36" title="Cisplatin">
-                                <div class="face contBackground contFrontBack contFront flex">Cisplatin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_37" title="Cladribine">
-                                <div class="face contBackground contFrontBack contFront flex">Cladribine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_38" title="Clarithromycin">
-                                <div class="face contBackground contFrontBack contFront flex">Clarithromycin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_39" title="Clindamycin">
-                                <div class="face contBackground contFrontBack contFront flex">Clindamycin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_40" title="Clobazam">
-                                <div class="face contBackground contFrontBack contFront flex">Clobazam</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="face rackBackground frontBack back"></div>
+                    <div class="face rackBackground leftRight left"></div>
+                    <div class="face rackBackground leftRight right">Rack 2</div>
+                    <div class="face rackBackground topBottom top"></div>
+                    <div class="face rackBackground topBottom bottom"></div>
                 </div>
-                <div class="face rackBackground frontBack back"></div>
-                <div class="face rackBackground leftRight left"></div>
-                <div class="face rackBackground leftRight right">Rack 2</div>
-                <div class="face rackBackground topBottom top"></div>
-                <div class="face rackBackground topBottom bottom"></div>
             </div>
-        </div>
-        <div class="scene">
-            <div class="cube rack1" id="rack_1" title="rack_1">
-                <div class="face rackBackground frontBack front">
-                    <div class="shelf" id="shelf_1" title="Rack 1 ( Shelf 1 )">
-                        <div class="medBox" id="medicine_1" title="Stavudine">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Stavudine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+            <div class="scene">
+                <div class="cube rack1" id="rack_1" title="rack_1">
+                    <div class="face rackBackground frontBack front">
+                        <div class="shelf" id="shelf_1" title="Rack 1 ( Shelf 1 )">
+                            <div class="medBox" id="medicine_1" title="Stavudine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Stavudine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_2" title="Sucralfate">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Sucralfate</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_3" title="Sugammadex">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Sugammadex</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_4" title="Abacavir">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Abacavir</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_5" title="Acyclovir">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Acyclovir</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox" id="medicine_2" title="Sucralfate">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Sucralfate</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 1 ( Shelf 2 )">
+                            <div class="medBox" id="medicine_6" title="Alemtuzumab">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Alemtuzumab</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_7" title="Alendronate">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Alendronate</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_8" title="Allopurinol">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Allopurinol</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_9" title="Amifostine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Amifostine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_10" title="Amikacin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Amikacin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox" id="medicine_3" title="Sugammadex">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Sugammadex</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 1 ( Shelf 3 )">
+                            <div class="medBox"  id="medicine_11" title="Aminocaproic Acid">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Aminocaproic Acid</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_12" title="Amitriptyline">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Amitriptyline</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_13" title="Amlodipine">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Amlodipine</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_14" title="Amoxicillin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Amoxicillin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_15" title="Paracetamol">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Paracetamol</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="medBox" id="medicine_4" title="Abacavir">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Abacavir</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                        <div class="shelf" title="Rack 1 ( Shelf 4 )">
+                            <div class="medBox" id="medicine_16" title="Amphotericin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Amphotericin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="medBox" id="medicine_5" title="Acyclovir">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Acyclovir</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
+                            <div class="medBox" id="medicine_17" title="Ampicillin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Ampicillin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_18" title="Baclofen">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Baclofen</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_19" title="Bleomycin">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Bleomycin</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
+                            </div>
+                            <div class="medBox" id="medicine_20" title="Bortezomib">
+                                <div class="cube">
+                                    <div class="face contBackground contFrontBack contFront flex">Bortezomib</div>
+                                    <div class="face contBackground contFrontBack contBack"></div>
+                                    <div class="face contBackground contLeftRight contLeft"></div>
+                                    <div class="face contBackground contLeftRight contRight"></div>
+                                    <div class="face contBackground contTopBottom contTop"></div>
+                                    <div class="face contBackground contTopBottom contBottom"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="shelf" title="Rack 1 ( Shelf 2 )">
-                        <div class="medBox" id="medicine_6" title="Alemtuzumab">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Alemtuzumab</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox" id="medicine_7" title="Alendronate">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Alendronate</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox" id="medicine_8" title="Allopurinol">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Allopurinol</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox" id="medicine_9" title="Amifostine">
-                            <div class="cube">
-                                <div class="face contBackground contFrontBack contFront flex">Amifostine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_10" title="Amikacin">
-                                <div class="face contBackground contFrontBack contFront flex">Amikacin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 1 ( Shelf 3 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_11" title="Aminocaproic Acid">
-                                <div class="face contBackground contFrontBack contFront flex">Aminocaproic Acid</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_12" title="Amitriptyline">
-                                <div class="face contBackground contFrontBack contFront flex">Amitriptyline</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_13" title="Amlodipine">
-                                <div class="face contBackground contFrontBack contFront flex">Amlodipine</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_14" title="Amoxicillin">
-                                <div class="face contBackground contFrontBack contFront flex">Amoxicillin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_15" title="Paracetamol">
-                                <div class="face contBackground contFrontBack contFront flex">Paracetamol</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="shelf" title="Rack 1 ( Shelf 4 )">
-                        <div class="medBox">
-                            <div class="cube" id="medicine_16" title="Amphotericin">
-                                <div class="face contBackground contFrontBack contFront flex">Amphotericin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_17" title="Ampicillin">
-                                <div class="face contBackground contFrontBack contFront flex">Ampicillin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_18" title="Baclofen">
-                                <div class="face contBackground contFrontBack contFront flex">Baclofen</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_19" title="Bleomycin">
-                                <div class="face contBackground contFrontBack contFront flex">Bleomycin</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                        <div class="medBox">
-                            <div class="cube" id="medicine_20" title="Bortezomib">
-                                <div class="face contBackground contFrontBack contFront flex">Bortezomib</div>
-                                <div class="face contBackground contFrontBack contBack"></div>
-                                <div class="face contBackground contLeftRight contLeft"></div>
-                                <div class="face contBackground contLeftRight contRight"></div>
-                                <div class="face contBackground contTopBottom contTop"></div>
-                                <div class="face contBackground contTopBottom contBottom"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="face rackBackground frontBack back"></div> 
+                    <div class="face rackBackground leftRight left"></div>
+                    <div class="face rackBackground leftRight right">Rack 1</div>
+                    <div class="face rackBackground topBottom top"></div>
+                    <div class="face rackBackground topBottom bottom"></div>
                 </div>
-                <div class="face rackBackground frontBack back"></div> 
-                <div class="face rackBackground leftRight left"></div>
-                <div class="face rackBackground leftRight right">Rack 1</div>
-                <div class="face rackBackground topBottom top"></div>
-                <div class="face rackBackground topBottom bottom"></div>
             </div>
-        </div>
-    </div>   
+        </div> 
+    </div>  
     <div class="createList">
       <div id="listContainer"></div>
     </div>
