@@ -78,8 +78,8 @@ button{
     background-color: #3a0ca3;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
+    padding: 1rem 2rem;
+    border-radius: 0.4rem;
     font-size: 1.5rem;
     cursor: pointer;
     font-weight: bold;
@@ -183,7 +183,7 @@ button:hover{
 .cube{
     position: relative;
     transform-style: preserve-3d;
-    transform: translate3d(15px, 18px, 30px);
+    transform: translate3d(1.5rem, 1.8rem, 3rem);
 }
 .face{
     position:absolute;
@@ -197,32 +197,32 @@ button:hover{
     width: var(--frontWidth);
 }
 .front{
-    transform: rotateY(0deg) translateZ(100px);
+    transform: rotateY(0deg) translateZ(calc(var(--sideWidth)/2));
     display: grid;
     grid-template-rows: repeat(4,1fr);
 }
 .back{
-    transform: rotateY(180deg) translateZ(100px);
+    transform: rotateY(180deg) translateZ(calc(var(--sideWidth)/2));
 }
 .leftRight{
     height: var(--frontHeight);
     width: var(--sideWidth);
 }
 .right{ 
-    transform: rotateY(90deg) translateZ(500px);
+    transform: rotateY(90deg) translateZ(calc(var(--frontWidth) - (var(--sideWidth)/2)));
 }
 .left{
-    transform: rotateY(-90deg) translateZ(100px);
+    transform: rotateY(-90deg) translateZ(calc(var(--sideWidth)/2));
 }
 .topBottom{
     height: var(--sideWidth);
     width: var(--frontWidth);
 }
 .top{
-    transform: rotateX(90deg) translateZ(100px);
+    transform: rotateX(90deg) translateZ(calc(var(--sideWidth)/2));
 }
 .bottom{
-    transform: rotateX(-90deg) translateZ(500px);
+    transform: rotateX(-90deg) translateZ(calc(var(--frontHeight) - (var(--sideWidth)/2)));
 }
 .shelf{
     border: 1px solid black; 
@@ -244,33 +244,33 @@ button:hover{
     width: var(--contFrontWidth);
 }
 .contFront{
-    transform: rotateY(0deg) translateZ(100px);
+    transform: rotateY(0deg) translateZ(calc(var(--contSideWidth)/2));
     opacity: 0.8;
     font-size: 1.5rem;
     text-align: center;
 }
 .contBack{
-    transform: rotateY(180deg) translateZ(100px);
+    transform: rotateY(180deg) translateZ(calc(var(--contSideWidth)/2));
 }
 .contLeftRight{
     height: var(--contFrontHeight);
     width: var(--contSideWidth);
 }
 .contRight{
-    transform: rotateY(90deg) translateZ(0px);
+    transform: rotateY(90deg) translateZ(calc(var(--contFrontWidth) - (var(--contSideWidth)/2)));
 }
 .contLeft{
-    transform: rotateY(-90deg) translateZ(100px);
+    transform: rotateY(-90deg) translateZ(calc(var(--contSideWidth)/2));
 }
 .contTopBottom{
     height: var(--contSideWidth);
     width: var(--contFrontWidth);
 }
 .contTop{
-    transform: rotateX(90deg) translateZ(100px);
+    transform: rotateX(90deg) translateZ(calc(var(--contSideWidth)/2));
 }
 .contBottom{
-    transform: rotateX(-90deg) translateZ(20px);
+    transform: rotateX(-90deg) translateZ(calc(var(--contFrontHeight) - (var(--contSideWidth)/2)));
 }
 .rack1,.rack2,.rack3,.rack4,.rack5{
     transition: 2s;
