@@ -97,6 +97,7 @@ var medicines = medicinesNameList.map(function(medicineName, index) : Medicine{
           availableQuantity : 100
       };
 });
+rackGenerator();
 showMedicineList();
 
 /**
@@ -199,6 +200,7 @@ function salesMedicine(){
       containerDetails.availableQuantity = containerDetails.availableQuantity - salesQuantity;
       medicineQuantity.innerHTML = containerDetails.availableQuantity+'';
       document.querySelector("."+containerDetails.id).lastChild.textContent = containerDetails.availableQuantity+'';
+      document.getElementById(containerDetails.id).firstChild.firstChild.lastChild.textContent = containerDetails.availableQuantity+'';
       var validateQuantity = (30 * containerDetails.capacity)/100;
       if(containerDetails.availableQuantity < validateQuantity){
         blinkAlert(containerDetails.id);
@@ -298,10 +300,8 @@ function showNextRack(){
  * select the medicine by clicking the list. 
  */
 function selectMedicine(medicineClass){
-  console.log("class:"+medicineClass);
   const classArray = medicineClass.split(" ");
   let medicineId = classArray[0];
-  console.log("class:"+medicineId)
   let medicineName:string = document.querySelector("."+medicineId).firstChild.textContent;
   (searchMedicineInput as HTMLInputElement).value=medicineName;
   if(activeRack){
@@ -310,4 +310,87 @@ function selectMedicine(medicineClass){
   highlightRack();
   listSelection = document.querySelector("."+medicineId);
   listSelection.classList.add("contStyle");
+}
+/**
+ * To generate the rack dynamically.
+ */
+function rackGenerator(){
+  var container = document.querySelector(".container");
+  console.log(medicines[0]);
+  var index:number = 0;
+  var zIndex:number = 10;
+  for(var k=0;k<rackDetails.length;k++){
+    var rackName : string = rackDetails[k];
+    let scene = document.createElement("div");
+    scene.classList.add("scene");
+    scene.style.zIndex = zIndex+'';
+    let cube = document.createElement("div");
+    cube.id = rackName;
+    cube.classList.add("cube");
+    cube.title = rackName;
+    let front = document.createElement("div");
+    for(var j=1;j<=4;j++){
+      let shelf = document.createElement("div");
+      shelf.classList.add("shelf");
+      for(var i=1;i<=5;i++){
+        var medbox = document.createElement("div");
+        medbox.classList.add("medBox");
+        medbox.id=medicines[index].id;
+        let smallCube = document.createElement("div");
+        smallCube.classList.add("cube");
+        let smallfront = document.createElement("div");
+        let medName = document.createElement("p");
+        medName.classList.add("sticker");
+        let medQuantity = document.createElement("p");
+        medQuantity.classList.add("displayQuantity");
+        let medText = document.createTextNode(medicines[index].name);
+        let quantityText = document.createTextNode(medicines[index].availableQuantity+'');
+        medName.appendChild(medText);
+        medQuantity.appendChild(quantityText);
+        smallfront.appendChild(medName);
+        smallfront.appendChild(medQuantity);
+        let smallback = document.createElement("div");
+        let smallleft = document.createElement("div");
+        let smallright = document.createElement("div");
+        let smalltop = document.createElement("div");
+        let smallbottom = document.createElement("div");
+        smallfront.classList.add("face","contBackground","contFrontBack","contFront","flex");
+        smallback.classList.add("face","contBackground","contFrontBack","contBack");
+        smallleft.classList.add("face","contBackground","contLeftRight","contLeft");
+        smallright.classList.add("face","contBackground","contLeftRight","contRight");
+        smalltop.classList.add("face","contBackground","contTopBottom","contTop");
+        smallbottom.classList.add("face","contBackground","contTopBottom","contBottom");
+        smallCube.appendChild(smallfront);
+        smallCube.appendChild(smallback);
+        smallCube.appendChild(smallleft);
+        smallCube.appendChild(smallright);
+        smallCube.appendChild(smalltop);
+        smallCube.appendChild(smallbottom);
+        medbox.appendChild(smallCube);
+        shelf.appendChild(medbox);
+        index++;
+      }
+      front.appendChild(shelf);
+    }
+    let back = document.createElement("div");
+    let left = document.createElement("div");
+    let right = document.createElement("div");
+    let top = document.createElement("div");
+    let bottom = document.createElement("div");
+    front.classList.add("face","rackBackground","frontBack","front");
+    back.classList.add("face","rackBackground","frontBack","back");
+    left.classList.add("face","rackBackground","leftRight","left");
+    right.classList.add("face","rackBackground","leftRight","right");
+    top.classList.add("face","rackBackground","topBottom","top");
+    bottom.classList.add("face","rackBackground","topBottom","bottom");
+    cube.appendChild(front);
+    cube.appendChild(back);
+    cube.appendChild(left);
+    cube.appendChild(right);
+    cube.appendChild(top);
+    cube.appendChild(bottom);
+    scene.appendChild(cube); 
+    container.appendChild(scene);
+    zIndex--;
+  }
 }

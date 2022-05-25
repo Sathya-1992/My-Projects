@@ -8,6 +8,8 @@ html{
 }
 body{
     font-size: 2rem;
+    height: 100vh;
+    width: 100vw;
 }
 :root{
     --frontWidth : 60rem;
@@ -19,21 +21,24 @@ body{
     --distance : 1700;
     --currentRack : 0; 
 }
+h2{
+    text-align: center;
+    color: #3a0ca3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
 .fullContainer{
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
-    height: 100vh;
-    width: 100vw;
-    padding: 2rem;
-    row-gap: 5rem;
+    padding: 1rem;
+    row-gap: 4rem;
     column-gap: 2rem;
 }
 .searchBox{
     border: 1px solid #ddd;
     padding: 1rem;
     background-color: rgb(250,249,252);
-    z-index: 1;
+    z-index: 11;
 }
 .search{
     gap: 2rem;
@@ -51,7 +56,10 @@ body{
 }
 .containerStyle>div{
     animation: rotate-animation 2s linear infinite;
-    z-index: 1;
+    z-index: 11;
+}
+.containerStyle p:last-child{
+    display: flex;
 }
 @keyframes rotate-animation {
     0% {
@@ -67,6 +75,9 @@ body{
 .sticker{
     padding: 0.3rem;
     background-color: white;
+}
+.displayQuantity{
+    display: none;
 }
 .pathColor{
     color: #3a0ca3;
@@ -107,11 +118,11 @@ button:hover{
     color: red;
 }
 .space{
-    z-index: 1;
+    z-index: 11;
 }
 .blinkContainer{
     animation: blink-animation 1s steps(5, start) infinite;
-    z-index: 1;
+    z-index: 11;
 }
 @keyframes blink-animation {
     to{
@@ -123,7 +134,7 @@ button:hover{
 }
 .createList{
     grid-area: 2/2/3/3;
-    z-index: 1; 
+    z-index: 111; 
 }
 #listContainer{
     display: grid;
@@ -137,9 +148,6 @@ button:hover{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     cursor: pointer;
-}
-.medicineList>div:hover{
-    font-size: 1.7rem;
 }
 .medicineList{
     display: grid;
@@ -245,6 +253,8 @@ button:hover{
     opacity: 0.8;
     font-size: 1.5rem;
     text-align: center;
+    flex-direction: column;
+    gap: 2px;
 }
 .contBack{
     transform: rotateY(180deg) translateZ(calc(var(--contSideWidth)/2));
@@ -269,21 +279,21 @@ button:hover{
 .contBottom{
     transform: rotateX(-90deg) translateZ(calc(var(--contFrontHeight) - (var(--contSideWidth)/2)));
 }
-.rack1,.rack2,.rack3,.rack4,.rack5{
+#rack_1,#rack_2,#rack_3,#rack_4,#rack_5{
     transition: 2s;
 }
-.rack5{
+#rack_5{
     transform: translate3d(150px,0px,calc(4*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 }
-.rack4{
+#rack_4{
     transform: translate3d(150px,0px,calc(3*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 }
-.rack3{
+#rack_3{
     transform: translate3d(150px,0px,calc(2*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 }
-.rack2{
+#rack_2{
     transform: translate3d(150px,0px,calc(1*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 }
-.rack1{
+#rack_1{
     transform: translate3d(150px,0px,calc(0*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
 } 
