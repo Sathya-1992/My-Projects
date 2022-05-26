@@ -27,7 +27,6 @@ var salesQuantity : number;
 var searchMedicineInput : HTMLElement;
 var salesMedicineQuantity: HTMLElement;
 var billForm :HTMLElement;
-var errorValue : HTMLElement;
 var pathDetail : HTMLElement;
 var medicineName : HTMLElement;
 var medicineCapacity : HTMLElement;
@@ -37,11 +36,12 @@ var listContainer : HTMLElement;
 var datalist : HTMLElement;
 var root = document.documentElement;
 var currentRack:number;
-var selectedMedicineClass:string;
 var medicineId:string;
 var activeList : string;
 var listSelection:HTMLElement;
 var blinkList :HTMLElement;
+var inputId : string;
+var listStyleId : string;
 /**
  * Initial function.
  */
@@ -49,7 +49,6 @@ var blinkList :HTMLElement;
    searchMedicineInput = document.querySelector(".searchMedicine");
    salesMedicineQuantity = document.getElementById("salesQuantity");
    billForm = document.getElementById("billform");
-   errorValue = document.getElementById("error");
    pathDetail = document.getElementById("path");
    medicineName = document.getElementById("medName");
    medicineCapacity = document.getElementById("medCapacity");
@@ -57,20 +56,18 @@ var blinkList :HTMLElement;
    listContainer = document.getElementById("listContainer");
    root = document.documentElement;
    datalist = document.getElementById("medicine");
-   selectedMedicineClass="";
    searchMedicineInput.addEventListener("keypress",function(event){
     if(event.key === "Enter"){
       event.preventDefault();
       document.getElementById("searchBtn").click();
     }
   });
-  
   salesMedicineQuantity.addEventListener("keypress",function(event){
     if(event.key === "Enter"){
       event.preventDefault();
       document.getElementById("submitSalesBtn").click();
     }
-  })
+  });
 })();
 /**
  * 
@@ -125,6 +122,7 @@ function highlightRack(){
   if(activeRack){
     container && container.classList.remove("containerStyle");
     listSelection.classList.remove("contStyle");
+    listStyleId="";
     billForm.style.display = "none";
   }
   searchWord  = (searchMedicineInput as HTMLInputElement).value;
@@ -145,6 +143,7 @@ function highlightRack(){
           container && container.classList.add("containerStyle");
           listSelection = document.querySelector("."+medicineId);
           listSelection.classList.add("contStyle");
+          listStyleId = medicineId;
           pathDetail.innerHTML = "Medicine Path : "+rackId+" - "+shelfId+" - "+medicineId;
           pathDetail.style.display = "flex";
           currentRack = i;
@@ -163,10 +162,10 @@ function clearDetails(){
   (searchMedicineInput as HTMLInputElement).value = '';
   container && container.classList.remove("containerStyle"); 
   listSelection && listSelection.classList.remove("contStyle");
+  listStyleId = "";
   searchWord = "";
   pathDetail.style.display = "none";
   billForm.style.display = "none";
-  errorValue.style.display = "none";
   currentRack = 0;
   root.style.setProperty("--currentRack", currentRack.toString());
 }
@@ -178,7 +177,6 @@ function billingForm(){
   medicineName.innerHTML  = containerDetails.name;
   medicineCapacity.innerHTML = containerDetails.capacity+'';
   medicineQuantity.innerHTML = containerDetails.availableQuantity+'';
-  errorValue.style.display = "none";
 }
 /**
  * Calculate and show current availability of Medicines.
@@ -188,18 +186,15 @@ function salesMedicine(){
   if(valueCheck){
     salesQuantity = parseInt((salesMedicineQuantity as HTMLInputElement).value);
     if(salesQuantity > containerDetails.availableQuantity){
-      errorValue.style.display = "block";
-      errorValue.innerHTML = "Error: Only "+containerDetails.availableQuantity+" medicines are available."
+      alert("Error: Only "+containerDetails.availableQuantity+" medicines are available.");
     }
     else if(salesQuantity <= 0){
-      errorValue.style.display = "block";
-      errorValue.innerHTML = "Error: Enter valid number";
+      alert("Error: Enter valid number");
     }
     else{
-      errorValue.style.display = "none";
       containerDetails.availableQuantity = containerDetails.availableQuantity - salesQuantity;
       medicineQuantity.innerHTML = containerDetails.availableQuantity+'';
-      document.querySelector("."+containerDetails.id).lastChild.textContent = containerDetails.availableQuantity+'';
+      document.querySelector("."+containerDetails.id).lastChild.firstChild.textContent = containerDetails.availableQuantity+'';
       document.getElementById(containerDetails.id).firstChild.firstChild.lastChild.textContent = containerDetails.availableQuantity+'';
       var validateQuantity = (30 * containerDetails.capacity)/100;
       if(containerDetails.availableQuantity < validateQuantity){
@@ -208,8 +203,7 @@ function salesMedicine(){
     }
   }
   else{
-    errorValue.style.display = "block";
-    errorValue.innerHTML = "Error: You must enter the number";
+    alert("Error: You must enter the number");
   }
   (salesMedicineQuantity as HTMLInputElement).value = '';
 }
@@ -234,11 +228,22 @@ function showMedicineList(){
   for(var i=0; i<medicines.length; i++){
     var medicineName = medicines[i].name;
     var availQuantity = medicines[i].availableQuantity.toString();
-    medicineId = "medicine_"+(i+1);
-    contentHtml += "<div class="+medicineId+" onclick='selectMedicine(this.className)'><div class='listStyle flex'>"+medicineName+"</div><div class='listStyle flex'>"+availQuantity+"</div></div>"
+    var minQuantityClass ="";
+    
+    var validateQuantity = (30 * medicines[i].capacity)/100;
+    if(medicines[i].availableQuantity<validateQuantity){
+      minQuantityClass = "minimumQuantity";
+    }
+    medicineId = medicines[i].id;
+    inputId = "input_"+(i+1);
+    contentHtml += "<div class='"+medicineId+" "+minQuantityClass+"' onclick='selectMedicine(this.className)'><div class='listStyle flex'>"+medicineName+"</div><div class='listStyle flex'><p>"+availQuantity+"</p><p class='flex displayInput'><input class='inputWidth' type='number' title='Sales Quantity'><span class='material-icons-outlined go' id="+inputId+" onclick='getSalesQuantity(this.id)'>send</span></p></div></div>"
   }
   contentHtml += "</div>";
   listContainer.innerHTML = headerHtml + contentHtml;
+  if(listStyleId){
+    listSelection = document.querySelector("."+listStyleId);
+    listSelection.classList.add("contStyle");
+  }
 }
 /**
  * Sort medicine details by available quantity (Ascending).
@@ -306,17 +311,25 @@ function selectMedicine(medicineClass){
   (searchMedicineInput as HTMLInputElement).value=medicineName;
   if(activeRack){
     listSelection.classList.remove("contStyle");
+    listStyleId="";
   }
   highlightRack();
   listSelection = document.querySelector("."+medicineId);
   listSelection.classList.add("contStyle");
+  listStyleId = medicineId;
+}
+
+function getSalesQuantity(id){
+  let value = (document.querySelector(".contStyle input") as HTMLInputElement).value;
+  (salesMedicineQuantity as HTMLInputElement).value = value;
+  salesMedicine();
+  (document.querySelector(".contStyle input") as HTMLInputElement).value = "";
 }
 /**
  * To generate the rack dynamically.
  */
 function rackGenerator(){
   var container = document.querySelector(".container");
-  console.log(medicines[0]);
   var index:number = 0;
   var zIndex:number = 10;
   for(var k=0;k<rackDetails.length;k++){

@@ -58,7 +58,7 @@ h2{
     animation: rotate-animation 2s linear infinite;
     z-index: 11;
 }
-.containerStyle p:last-child{
+.containerStyle p:last-child, .blinkContainer p:last-child, .contStyle p:last-child{
     display: flex;
 }
 @keyframes rotate-animation {
@@ -113,10 +113,6 @@ button:hover{
     grid-template-rows: auto 1fr;
     gap: 5rem;
 }
-#error{
-    display: none;
-    color: red;
-}
 .space{
     z-index: 11;
 }
@@ -147,12 +143,12 @@ button:hover{
 .listHeader, .medicineList>div{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    cursor: pointer;
 }
 .medicineList{
     display: grid;
     grid-auto-rows: auto;
     overflow-y: scroll;
+    cursor: pointer;
 }
 .medicineList>div:nth-child(even){
     background-color: rgb(250,249,252);
@@ -172,6 +168,22 @@ button:hover{
 .iconpad:hover{
     color: rgb(219, 219, 223);
     font-weight: bolder;
+}
+.displayInput{
+    display: none;
+    gap: 0.5rem;
+}
+.inputWidth{
+    width: 20%;
+}
+.go{
+    border: 1px solid;
+    background-color: rgb(89,172,110);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.4rem !important;
+    padding: 0.3rem;
+    text-align: center;
 }
 .container{
     display: grid;
