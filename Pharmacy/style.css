@@ -169,12 +169,15 @@ button:hover{
     color: rgb(219, 219, 223);
     font-weight: bolder;
 }
+.gap{
+    gap: 1rem;
+}
 .displayInput{
     display: none;
     gap: 0.5rem;
 }
 .inputWidth{
-    width: 20%;
+    width: 5rem;
 }
 .go{
     border: 1px solid;

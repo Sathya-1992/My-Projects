@@ -223,7 +223,7 @@ function showMedicineList() {
         }
         medicineId = medicines[i].id;
         inputId = "input_" + (i + 1);
-        contentHtml += "<div class='" + medicineId + " " + minQuantityClass + "' onclick='selectMedicine(this.className)'><div class='listStyle flex'>" + medicineName + "</div><div class='listStyle flex'><p>" + availQuantity + "</p><p class='flex displayInput'><input class='inputWidth' type='number' title='Sales Quantity'><span class='material-icons-outlined go' id=" + inputId + " onclick='getSalesQuantity(this.id)'>send</span></p></div></div>";
+        contentHtml += "<div class='" + medicineId + " " + minQuantityClass + "' onclick='selectMedicine(this.className)'><div class='listStyle flex'>" + medicineName + "</div><div class='listStyle flex gap'><p>" + availQuantity + "</p><p class='flex displayInput'><input class='inputWidth' type='number' title='Sales Quantity'><span class='material-icons-outlined go' onclick='getSalesQuantity()'>send</span></p></div></div>";
     }
     contentHtml += "</div>";
     listContainer.innerHTML = headerHtml + contentHtml;
@@ -305,7 +305,10 @@ function selectMedicine(medicineClass) {
     listSelection.classList.add("contStyle");
     listStyleId = medicineId;
 }
-function getSalesQuantity(id) {
+/**
+ * Get the sales quantity value from list.
+ */
+function getSalesQuantity() {
     var value = document.querySelector(".contStyle input").value;
     salesMedicineQuantity.value = value;
     salesMedicine();
