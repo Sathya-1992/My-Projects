@@ -5,6 +5,7 @@ type Medicine = {
   shelf :string;
   capacity : number;
   availableQuantity : number;
+  price : number;
 }
 
 var medicinesNameList = [
@@ -24,7 +25,7 @@ var activeRack:string;
 var containerDetails :Medicine;
 var container :HTMLElement;
 var salesQuantity : number;
-var searchMedicineInput : HTMLElement;
+var searchMedicineInput : HTMLInputElement;
 var salesMedicineQuantity: HTMLElement;
 var billForm :HTMLElement;
 var pathDetail : HTMLElement;
@@ -42,6 +43,19 @@ var listSelection:HTMLElement;
 var blinkList :HTMLElement;
 var inputId : string;
 var listStyleId : string;
+var rate:number = 0;
+var totItems:number = 0;
+var totQty:number = 0;
+var totPrice:number = 0;
+var totItemsId:HTMLElement;
+var totQtyId:HTMLElement;
+var totPriceId : HTMLElement;
+var dateId : HTMLElement;
+var billNoId : HTMLElement;
+var cart : HTMLElement;
+var date:string;
+var billNo : number = 1;
+var removeEditId : number=1;
 /**
  * Initial function.
  */
@@ -56,6 +70,15 @@ var listStyleId : string;
    listContainer = document.getElementById("listContainer");
    root = document.documentElement;
    datalist = document.getElementById("medicine");
+   totItemsId = document.getElementById("totItems");
+   totQtyId = document.getElementById("totQty");
+   totPriceId = document.getElementById("totPrice");
+   cart = document.querySelector(".cart");
+   dateId = document.getElementById("date");
+   billNoId = document.getElementById("billNo");
+  date = new Date().toLocaleDateString();
+  dateId.innerHTML = date;
+  billNoId.innerHTML = billNo.toString();
    searchMedicineInput.addEventListener("keypress",function(event){
     if(event.key === "Enter"){
       event.preventDefault();
@@ -79,6 +102,7 @@ var medicines = medicinesNameList.map(function(medicineName, index) : Medicine{
   var rackName : string = "rack_"+ (Math.floor(index/20) + 1);
   if(rackDetails.indexOf(rackName)===-1){
       rackDetails.push(rackName);
+      rate = rate+3;
   }
   if(index%20==0){
       shelfCount=0;
@@ -91,7 +115,8 @@ var medicines = medicinesNameList.map(function(medicineName, index) : Medicine{
           rack : rackName,
           shelf : shelfName,
           capacity : 100,
-          availableQuantity : 100
+          availableQuantity : 100,
+          price : rate
       };
 });
 rackGenerator();
@@ -125,7 +150,7 @@ function highlightRack(){
     listStyleId="";
     billForm.style.display = "none";
   }
-  searchWord  = (searchMedicineInput as HTMLInputElement).value;
+  searchWord  = searchMedicineInput.value;
   if(searchWord===""){
     alert("Medicine name can't be empty");
     clearDetails();
@@ -147,9 +172,9 @@ function highlightRack(){
           pathDetail.innerHTML = "Medicine Path : "+rackId+" - "+shelfId+" - "+medicineId;
           pathDetail.style.display = "flex";
           currentRack = i;
-          root.style.setProperty("--currentRack", currentRack.toString());
         }
       }
+      root.style.setProperty("--currentRack", currentRack.toString());
       billingForm();
     }
   }
@@ -159,7 +184,7 @@ function highlightRack(){
  * To clear previously searched medicine details.
  */
 function clearDetails(){
-  (searchMedicineInput as HTMLInputElement).value = '';
+  searchMedicineInput.value = '';
   container && container.classList.remove("containerStyle"); 
   listSelection && listSelection.classList.remove("contStyle");
   listStyleId = "";
@@ -193,13 +218,8 @@ function salesMedicine(){
     }
     else{
       containerDetails.availableQuantity = containerDetails.availableQuantity - salesQuantity;
-      medicineQuantity.innerHTML = containerDetails.availableQuantity+'';
-      document.querySelector("."+containerDetails.id).lastChild.firstChild.textContent = containerDetails.availableQuantity+'';
-      document.getElementById(containerDetails.id).firstChild.firstChild.lastChild.textContent = containerDetails.availableQuantity+'';
-      var validateQuantity = (30 * containerDetails.capacity)/100;
-      if(containerDetails.availableQuantity < validateQuantity){
-        blinkAlert(containerDetails.id);
-      }
+      updateAvailableQuantity(containerDetails);
+      addToBilling(containerDetails.id);
     }
   }
   else{
@@ -207,6 +227,24 @@ function salesMedicine(){
   }
   (salesMedicineQuantity as HTMLInputElement).value = '';
 }
+
+/**
+ * Update the available quantity of medicines.
+ * @param containerDetails to update particular medicine
+ */
+function updateAvailableQuantity(containerDetails){
+  medicineQuantity.innerHTML = containerDetails.availableQuantity+'';
+  document.querySelector("."+containerDetails.id).lastChild.firstChild.textContent = containerDetails.availableQuantity+'';
+  document.getElementById(containerDetails.id).firstChild.firstChild.lastChild.textContent = containerDetails.availableQuantity+'';
+  var validateQuantity = (30 * containerDetails.capacity)/100;
+  if(containerDetails.availableQuantity < validateQuantity){
+    blinkAlert(containerDetails.id);
+  }
+  else if(document.getElementById(containerDetails.id).classList.contains("blinkContainer")){
+    removeBlinkAlert(containerDetails.id);
+  }
+}
+
 /**
  * 
  * @param containerId to find minimum quantity container.
@@ -219,6 +257,19 @@ function blinkAlert(containerId : string){
   blinkList = document.querySelector("."+containerId);
   blinkList.classList.add("minimumQuantity");
 }
+/**
+ * 
+ * @param containerId to find container which has class blinkContainer
+ * Remove the blink class which medicines quantity updated.
+ */
+
+function removeBlinkAlert(containerId:string){
+  let blinkCont = document.getElementById(containerId);
+  blinkCont.classList.remove("blinkContainer");
+  let blink = document.querySelector("."+containerId);
+  blink.classList.remove("minimumQuantity");
+}
+
 /**
  * To show all medicine name and its available quantity.
  */
@@ -308,7 +359,7 @@ function selectMedicine(medicineClass){
   const classArray = medicineClass.split(" ");
   let medicineId = classArray[0];
   let medicineName:string = document.querySelector("."+medicineId).firstChild.textContent;
-  (searchMedicineInput as HTMLInputElement).value=medicineName;
+  searchMedicineInput.value=medicineName;
   if(activeRack){
     listSelection.classList.remove("contStyle");
     listStyleId="";
@@ -328,17 +379,124 @@ function getSalesQuantity(){
   (document.querySelector(".contStyle input") as HTMLInputElement).value = "";
 }
 /**
+ * Add medicines to cart.
+ * @param className to give same className to billing medicines
+ */
+function addToBilling(className){
+  let removeId:string = "remove_"+removeEditId;
+  let editId:string = "edit_"+removeEditId;
+  date = new Date().toLocaleDateString();
+  dateId.innerHTML = date;
+  let items = document.createElement("div");
+  items.classList.add(className,"items");
+  let particulars = document.createElement("div");
+  let qty = document.createElement("div");
+  let rate = document.createElement("div");
+  let amount = document.createElement("div");
+  let itemText = document.createTextNode(containerDetails.name);
+  let qtyText = document.createTextNode(salesQuantity.toString());
+  let rateText = document.createTextNode(containerDetails.price.toString());
+  let amountCalc = salesQuantity*containerDetails.price;
+  let amountText = document.createTextNode(amountCalc.toString());
+  let change = document.createElement("div");
+  change.classList.add("flex")
+  let edit = document.createElement("span");
+  let remove = document.createElement("span");
+  edit.classList.add("material-icons-outlined","cancel");
+  remove.classList.add("material-icons-outlined","cancel");
+  edit.id = editId;
+  remove.id = removeId;
+  let editText = document.createTextNode("edit_calendar");
+  let removeText = document.createTextNode("delete");
+  edit.setAttribute("onclick", "editMedicineQuantity(this.id)");
+  remove.setAttribute("onclick", "deleteMedicineCart(this.id)");
+  particulars.appendChild(itemText);
+  qty.appendChild(qtyText);
+  rate.appendChild(rateText);
+  amount.appendChild(amountText);
+  edit.appendChild(editText);
+  remove.appendChild(removeText);
+  change.appendChild(edit);
+  change.appendChild(remove);
+  items.appendChild(particulars);
+  items.appendChild(qty);
+  items.appendChild(rate);
+  items.appendChild(amount);
+  items.appendChild(change);
+  cart.appendChild(items);
+  totItems = totItems+1;
+  totQty = totQty+salesQuantity;
+  totPrice=totPrice+amountCalc;
+  totItemsId.innerHTML = totItems.toString();
+  totQtyId.innerHTML = totQty.toString();
+  totPriceId.innerHTML =totPrice.toString();
+  removeEditId++;
+}
+/**
+ * Edit the medicine quantity to bill.
+ */
+function editMedicineQuantity(editId:string){
+  let editBtn = document.getElementById(editId);
+  let medName = editBtn.parentElement.parentElement.firstChild.textContent;
+  searchMedicineInput.value = medName;
+  highlightRack();
+  deleteMedicineCart(editId);
+}
+/**
+ * Delete the medicines from the cart.
+ */
+function deleteMedicineCart(removeId:string){
+  let removeBtn = document.getElementById(removeId);
+  let amount = removeBtn.parentElement.previousElementSibling.textContent;
+  let value = removeBtn.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.textContent;
+  let medName = removeBtn.parentElement.parentElement.firstChild.textContent;
+  removeBtn.parentElement.parentElement.remove();
+  let medicineDetails = findMedicineDetail(medName);
+  medicineDetails.availableQuantity = medicineDetails.availableQuantity+parseInt(value);
+  totItems = totItems-1;
+  totQty = totQty-parseInt(value);
+  totPrice = totPrice-parseInt(amount);
+  updateCashBill();
+  updateAvailableQuantity(medicineDetails);
+}
+/***
+ * Update the CashBill when bill is edited or deleted.
+ */
+
+function updateCashBill(){
+  totItemsId.innerText = totItems.toString();
+  totQtyId.innerText = totQty.toString();
+  totPriceId.innerText = totPrice.toString();
+}
+/**
+ * Edit the bill to ready next bill
+ */
+function payBill(){
+  if(cart.innerText === ""){
+    alert("Add the medicines to bill.")
+  }
+  else{
+    billNo = billNo+1;
+    totItems =0;
+    totQty =0;
+    totPrice = 0;
+    billNoId.innerText = billNo.toString();
+    cart.innerText = "";
+    totItemsId.innerText = "";
+    totQtyId.innerText = "";
+    totPriceId.innerText ="";
+  }
+}
+/**
  * To generate the rack dynamically.
  */
 function rackGenerator(){
   var container = document.querySelector(".container");
   var index:number = 0;
-  var zIndex:number = 10;
+  let scene = document.createElement("div");
+  scene.classList.add("scene");
   for(var k=0;k<rackDetails.length;k++){
     var rackName : string = rackDetails[k];
-    let scene = document.createElement("div");
-    scene.classList.add("scene");
-    scene.style.zIndex = zIndex+'';
     let cube = document.createElement("div");
     cube.id = rackName;
     cube.classList.add("cube");
@@ -398,6 +556,11 @@ function rackGenerator(){
     right.classList.add("face","rackBackground","leftRight","right");
     top.classList.add("face","rackBackground","topBottom","top");
     bottom.classList.add("face","rackBackground","topBottom","bottom");
+    let rackName1 = document.createTextNode("Rack"+(k+1));
+    let rackNameEle = document.createElement("span");
+    rackNameEle.appendChild(rackName1);
+    rackNameEle.classList.add("rackNameStyle")
+    right.appendChild(rackNameEle);
     cube.appendChild(front);
     cube.appendChild(back);
     cube.appendChild(left);
@@ -405,7 +568,6 @@ function rackGenerator(){
     cube.appendChild(top);
     cube.appendChild(bottom);
     scene.appendChild(cube); 
-    container.appendChild(scene);
-    zIndex--;
   }
+  container.appendChild(scene);
 }

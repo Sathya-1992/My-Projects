@@ -10,6 +10,7 @@ body{
     font-size: 2rem;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 :root{
     --frontWidth : 60rem;
@@ -18,7 +19,7 @@ body{
     --contFrontWidth : 10.5rem;
     --contFrontHeight : 12rem;
     --contSideWidth : 20rem; 
-    --distance : 1700;
+    --distance : 1250;
     --currentRack : 0; 
 }
 h2{
@@ -31,13 +32,12 @@ h2{
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
     padding: 1rem;
-    row-gap: 4rem;
+    row-gap: 2rem;
     column-gap: 2rem;
 }
 .searchBox{
     border: 1px solid #ddd;
     padding: 1rem;
-    background-color: rgb(250,249,252);
     z-index: 11;
 }
 .search{
@@ -46,7 +46,7 @@ h2{
 .inputpad{
     padding: 0.5rem;
 }
-.flex{
+.flex, .items{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,7 +98,9 @@ button:hover{
 }
 .formlayout{
     padding: 2rem;
-    background-color: rgb(250,249,252);
+}
+.font{
+    font-weight: bold;
 }
 #billform{
     display: none;
@@ -130,12 +132,15 @@ button:hover{
 }
 .createList{
     grid-area: 2/2/3/3;
-    z-index: 111; 
+    z-index: 11; 
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    gap: 2rem;
 }
 #listContainer{
     display: grid;
     grid-template-rows: auto 1fr;
-    height: 70rem;
+    height: 35rem;
     border: 1px solid #ddd;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.6rem;
@@ -150,7 +155,7 @@ button:hover{
     overflow-y: scroll;
     cursor: pointer;
 }
-.medicineList>div:nth-child(even){
+.medicineList>div:nth-child(even),.searchBox,.formlayout,.billHead{
     background-color: rgb(250,249,252);
 }
 .boldText{
@@ -161,7 +166,7 @@ button:hover{
 .listStyle{
     padding: 0.5rem;
 }
-.iconpad{
+.iconpad,.cancel{
     padding: 0rem 1rem;
     cursor: pointer;
 }
@@ -188,17 +193,59 @@ button:hover{
     padding: 0.3rem;
     text-align: center;
 }
-.container{
+.go:hover{
+    background-color: rgb(45 144 70);
+}
+.billing{
     display: grid;
-    justify-content: center;
+    grid-template-rows: auto auto auto 1fr auto;
+    height: 35rem;
+    border: 1px solid #ddd;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+}
+.border{
+    border-bottom: 1px dotted #ddd;
+    padding: 0.3rem;
+}
+.date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.billList{
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+.items{
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr 1fr;
+}
+.direction{
+    flex-direction: column;
+}
+.cart{
+    display: grid;
+    grid-auto-rows: 2.5rem;
+    overflow-y: auto;
+}
+.cancel{
+    font-size: 1.8rem;
+}
+.cancel:hover{
+    color: red;
+}
+.container{
+    width: 90rem;
+    height: 60rem;
+    perspective: 150rem;
+    perspective-origin: right;
 }
 .scene{
-    width: 100rem;
-    height: 50rem;
-    perspective: 200rem;
-    perspective-origin: right;
     transform-style: preserve-3d;
-    position: absolute;
+    transform: translateZ(calc(var(--currentRack)*var(--distance)*(1px)));
+    transition: 2s transform linear;
 }
 .cube{
     position: relative;
@@ -245,9 +292,12 @@ button:hover{
     transform: rotateX(-90deg) translateZ(calc(var(--frontHeight) - (var(--sideWidth)/2)));
 }
 .shelf{
-    border: 1px solid black; 
+    border-bottom: 1px solid black; 
     display: grid;
     grid-template-columns: repeat(5,1fr);
+}
+.rackNameStyle{
+    font-size: 1rem;
 }
 .medBox{
     width: 12rem;
@@ -295,20 +345,25 @@ button:hover{
     transform: rotateX(-90deg) translateZ(calc(var(--contFrontHeight) - (var(--contSideWidth)/2)));
 }
 #rack_1,#rack_2,#rack_3,#rack_4,#rack_5{
-    transition: 2s;
+    transition: 3s;
 }
 #rack_5{
-    transform: translate3d(150px,0px,calc(4*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
+    transform: translate3d(60px,0px,calc(4*var(--distance)*(-1px)));
+    z-index: 6;
 }
 #rack_4{
-    transform: translate3d(150px,0px,calc(3*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
+    transform: translate3d(60px,0px,calc(3*var(--distance)*(-1px)));
+    z-index: 7;
 }
 #rack_3{
-    transform: translate3d(150px,0px,calc(2*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
+    transform: translate3d(60px,0px,calc(2*var(--distance)*(-1px)));
+    z-index: 8;
 }
 #rack_2{
-    transform: translate3d(150px,0px,calc(1*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
+    transform: translate3d(60px,0px,calc(1*var(--distance)*(-1px)));
+    z-index: 9;
 }
 #rack_1{
-    transform: translate3d(150px,0px,calc(0*var(--distance)*(-1px) + (var(--currentRack)*var(--distance)*1px)));
+    transform: translate3d(60px,0px,calc(0*var(--distance)*(-1px)));
+    z-index: 10;
 } 

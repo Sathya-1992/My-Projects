@@ -22,9 +22,9 @@
       <div class="search flex pathColor" id="path"></div><br>
     </div>  
     <div class="formlayout" id="billform">
-      Medicine Name : <span id="medName"></span><br>
-      Capacity      : <span id="medCapacity"></span><br>
-      Available Quantity : <span id="medQuantity"></span><br>
+      Medicine Name : <span id="medName" class="pathColor"></span><br>
+      Capacity      : <span id="medCapacity" class="pathColor"></span><br>
+      Available Quantity : <span id="medQuantity" class="pathColor"></span><br>
       Enter the quantity to sale : <input class="inputpad" type="number" id="salesQuantity">
       <button onclick="salesMedicine()" id="submitSalesBtn">Submit</button>
     </div>
@@ -37,6 +37,32 @@
     </div>  
     <div class="createList">
       <div id="listContainer"></div>
+      <div class="billing">
+        <h4 class="flex border pathColor billHead">ABC PHARMACY</h4>
+        <h5 class="flex border">CASH BILL</h5>
+        <div class="date border">
+          <div><span>Bill No:</span><span id="billNo"></span></div>
+          <div><span>Date:</span><span id="date"></span></div>
+        </div>
+        <div class="billList border">
+          <div class="items border font">
+            <div>Particulars</div>
+            <div>Qty</div>
+            <div>Rate</div>
+            <div>Amount</div>
+            <div class="flex">Action</div>
+          </div>
+          <div class="cart"></div>
+        </div>
+        <div class="date">
+          <div class="flex direction">
+            <div>Tot Items: <span class="font" id="totItems"></span></div>
+            <div>Tot Qty: <span class="font" id="totQty"></span></div>
+          </div>
+          <button onclick="payBill()">Bill</button>
+          <div>Total: <span class="font" id="totPrice"></span></div>
+        </div>
+      </div>
     </div>
   </div>
   <script type="text/javascript" src="./script.js"></script>
