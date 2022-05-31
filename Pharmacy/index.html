@@ -10,57 +10,87 @@
     <title>Pharmacy</title>
 </head>
 <body>
-    <h2>ABC PHARMACY</h2>
   <div class="fullContainer">
-    <div class="searchBox">
-      <div class="search flex">
-        <label for="medicine">Enter the Medicine Name :</label> 
-        <input type="text" class="inputpad searchMedicine">
-        <button onclick="highlightRack()" id="searchBtn">Search</button>
-        <button onclick="clearDetails()">Clear</button>
-      </div><br>
-      <div class="search flex pathColor" id="path"></div><br>
-    </div>  
-    <div class="formlayout" id="billform">
-      Medicine Name : <span id="medName" class="pathColor"></span><br>
-      Capacity      : <span id="medCapacity" class="pathColor"></span><br>
-      Available Quantity : <span id="medQuantity" class="pathColor"></span><br>
-      Enter the quantity to sale : <input class="inputpad" type="number" id="salesQuantity">
-      <button onclick="salesMedicine()" id="submitSalesBtn">Submit</button>
+    <div class="flex gap billHead inputpad shadow">
+      <div class="flex">
+        <img src="./logo.png">
+        <h3 class="logoColor">BK<sub class="name">PHARMACY</sub></h3>
+      </div>
+      <div class="flex searchBox">
+        <input type="text" placeholder="Search Medicines (eg):Stavudine" class="inputpad searchMedicine">
+        <span class="material-icons-outlined clear" onclick="clearDetails()">close</span>
+        <button onclick="highlightRack()" id="searchBtn">
+          <span class="material-icons-outlined">search</span>
+        </button>
+      </div>
     </div>
-    <div class="containerRack">
+    <div class="layOut">
+      <div class="containerRack">
         <div class="space flex search">
             <button onclick="showPreviousRack()">Previous Rack</button>
             <button onclick="showNextRack()">Next Rack</button>
         </div>
         <div class="container"></div>  
-    </div>  
-    <div class="createList">
-      <div id="listContainer"></div>
-      <div class="billing">
-        <h4 class="flex border pathColor billHead">ABC PHARMACY</h4>
-        <h5 class="flex border">CASH BILL</h5>
-        <div class="date border">
-          <div><span>Bill No:</span><span id="billNo"></span></div>
-          <div><span>Date:</span><span id="date"></span></div>
-        </div>
-        <div class="billList border">
-          <div class="items border font">
-            <div>Particulars</div>
-            <div>Qty</div>
-            <div>Rate</div>
-            <div>Amount</div>
-            <div class="flex">Action</div>
+      </div>
+      <div id="listContainer">
+        <div class='listHeader boldText'>
+          <div class='listStyle flex'>Medicine Name</div>
+          <div class='listStyle flex'>
+            <span>Available Quantity</span>
+            <span class='material-icons-outlined iconpad' onclick='sortMedicineListAscending()' title='Ascending Order'>arrow_upward</span>
+            <span class='material-icons-outlined iconpad' onclick='sortMedicineListDescending()' title='Descending Order'>arrow_downward</span>
           </div>
-          <div class="cart"></div>
+        </div> 
+        <div class='medicineList'></div>
+      </div>
+      <div class="list">
+        <div id="billform">
+          <h4>Medicine Path:</h4>
+          <span class="flex formlayout pathColor" id="path"></span><br>
+          <h4>Medicine Details:</h4>
+          <div class="formlayout">
+            Medicine Name : <span id="medName" class="pathColor"></span><br>
+            Total Capacity: <span id="medCapacity" class="pathColor"></span><br>
+            Available Quantity : <span id="medQuantity" class="pathColor"></span><br>
+            Price per Unit : <span id="medPrice" class="pathColor"></span>
+          </div><br>
+            <h4>Billing:</h4>
+            <div class="salesLayout">
+              Sales Quantity : <input class="inputpad" type="number" id="salesQuantity">
+              <button onclick="salesMedicine()" id="submitSalesBtn">Submit</button>
+            </div>
         </div>
-        <div class="date">
-          <div class="flex direction">
-            <div>Tot Items: <span class="font" id="totItems"></span></div>
-            <div>Tot Qty: <span class="font" id="totQty"></span></div>
+        <div class="billing">
+          <div class="quantity billHead border">
+            <h5>GST IN:33CAC </h5>
+            <div class="flex border">
+              <img src="./logo.png" class="billLogo">
+              <h5 class="logoColor">BK<sub class="name">PHARMACY</sub></h5>
+            </div>
           </div>
-          <button onclick="payBill()">Bill</button>
-          <div>Total: <span class="font" id="totPrice"></span></div>
+          <h5 class="flex border">CASH BILL</h5>
+          <div class="date border">
+            <div><span>Bill No:</span><span id="billNo"></span></div>
+            <div><span>Date:</span><span id="date"></span></div>
+          </div>
+          <div class="billList border">
+            <div class="items border font boldText">
+              <div>Particulars</div>
+              <div class="flex">Qty</div>
+              <div class="flex">Rate</div>
+              <div class="flex">Amount</div>
+              <div class="flex">Action</div>
+            </div>
+            <div class="cart"></div>
+          </div>
+          <div class="date">
+            <div class="flex direction">
+              <div>Tot Items: <span class="font" id="totItems"></span></div>
+              <div>Tot Qty: <span class="font" id="totQty"></span></div>
+            </div>
+            <button onclick="payBill()">Bill</button>
+            <div>Total: <span class="font" id="totPrice"></span></div>
+          </div>
         </div>
       </div>
     </div>

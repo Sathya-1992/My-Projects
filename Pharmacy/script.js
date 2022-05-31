@@ -18,10 +18,12 @@ var salesQuantity;
 var searchMedicineInput;
 var salesMedicineQuantity;
 var billForm;
+var billingLayout;
 var pathDetail;
 var medicineName;
 var medicineCapacity;
 var medicineQuantity;
+var medicinePrice;
 var blinkContainer;
 var listContainer;
 var datalist;
@@ -53,10 +55,12 @@ var removeEditId = 1;
     searchMedicineInput = document.querySelector(".searchMedicine");
     salesMedicineQuantity = document.getElementById("salesQuantity");
     billForm = document.getElementById("billform");
+    billingLayout = document.querySelector(".billing");
     pathDetail = document.getElementById("path");
     medicineName = document.getElementById("medName");
     medicineCapacity = document.getElementById("medCapacity");
     medicineQuantity = document.getElementById("medQuantity");
+    medicinePrice = document.getElementById("medPrice");
     listContainer = document.getElementById("listContainer");
     root = document.documentElement;
     datalist = document.getElementById("medicine");
@@ -67,8 +71,8 @@ var removeEditId = 1;
     dateId = document.getElementById("date");
     billNoId = document.getElementById("billNo");
     date = new Date().toLocaleDateString();
-    dateId.innerHTML = date;
-    billNoId.innerHTML = billNo.toString();
+    dateId.textContent = date;
+    billNoId.textContent = billNo.toString();
     searchMedicineInput.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -158,8 +162,7 @@ function highlightRack() {
                     listSelection = document.querySelector("." + medicineId);
                     listSelection.classList.add("contStyle");
                     listStyleId = medicineId;
-                    pathDetail.innerHTML = "Medicine Path : " + rackId + " - " + shelfId + " - " + medicineId;
-                    pathDetail.style.display = "flex";
+                    pathDetail.textContent = rackId + " - " + shelfId + " - " + medicineId;
                     currentRack = i;
                 }
             }
@@ -177,7 +180,6 @@ function clearDetails() {
     listSelection && listSelection.classList.remove("contStyle");
     listStyleId = "";
     searchWord = "";
-    pathDetail.style.display = "none";
     billForm.style.display = "none";
     currentRack = 0;
     root.style.setProperty("--currentRack", currentRack.toString());
@@ -187,9 +189,11 @@ function clearDetails() {
  */
 function billingForm() {
     billForm.style.display = "block";
-    medicineName.innerHTML = containerDetails.name;
-    medicineCapacity.innerHTML = containerDetails.capacity + '';
-    medicineQuantity.innerHTML = containerDetails.availableQuantity + '';
+    billingLayout.style.display = "grid";
+    medicineName.textContent = containerDetails.name;
+    medicineCapacity.textContent = containerDetails.capacity + '';
+    medicineQuantity.textContent = containerDetails.availableQuantity + '';
+    medicinePrice.textContent = containerDetails.price + '';
 }
 /**
  * Calculate and show current availability of Medicines.
@@ -220,7 +224,7 @@ function salesMedicine() {
  * @param containerDetails to update particular medicine
  */
 function updateAvailableQuantity(containerDetails) {
-    medicineQuantity.innerHTML = containerDetails.availableQuantity + '';
+    medicineQuantity.textContent = containerDetails.availableQuantity + '';
     document.querySelector("." + containerDetails.id).lastChild.firstChild.textContent = containerDetails.availableQuantity + '';
     document.getElementById(containerDetails.id).firstChild.firstChild.lastChild.textContent = containerDetails.availableQuantity + '';
     var validateQuantity = (30 * containerDetails.capacity) / 100;
@@ -257,8 +261,8 @@ function removeBlinkAlert(containerId) {
  * To show all medicine name and its available quantity.
  */
 function showMedicineList() {
-    var headerHtml = "<div class='listHeader boldText'><div class='listStyle flex'>Medicine Name</div><div class='listStyle flex'>Available Quantity<span class='material-icons-outlined iconpad' onclick='sortMedicineListAscending()' title='Ascending Order'>arrow_upward</span><span class='material-icons-outlined iconpad' onclick='sortMedicineListDescending()' title='Descending Order'>arrow_downward</span></div></div>";
-    var contentHtml = "<div class='medicineList'>";
+    var listContainer = document.querySelector(".medicineList");
+    var contentHtml = "";
     for (var i = 0; i < medicines.length; i++) {
         var medicineName = medicines[i].name;
         var availQuantity = medicines[i].availableQuantity.toString();
@@ -271,8 +275,7 @@ function showMedicineList() {
         inputId = "input_" + (i + 1);
         contentHtml += "<div class='" + medicineId + " " + minQuantityClass + "' onclick='selectMedicine(this.className)'><div class='listStyle flex'>" + medicineName + "</div><div class='listStyle flex gap'><p>" + availQuantity + "</p><p class='flex displayInput'><input class='inputWidth' type='number' title='Sales Quantity'><span class='material-icons-outlined go' onclick='getSalesQuantity()'>send</span></p></div></div>";
     }
-    contentHtml += "</div>";
-    listContainer.innerHTML = headerHtml + contentHtml;
+    listContainer.innerHTML = contentHtml;
     if (listStyleId) {
         listSelection = document.querySelector("." + listStyleId);
         listSelection.classList.add("contStyle");
@@ -368,13 +371,16 @@ function addToBilling(className) {
     var removeId = "remove_" + removeEditId;
     var editId = "edit_" + removeEditId;
     date = new Date().toLocaleDateString();
-    dateId.innerHTML = date;
+    dateId.textContent = date;
     var items = document.createElement("div");
     items.classList.add(className, "items");
     var particulars = document.createElement("div");
     var qty = document.createElement("div");
+    qty.classList.add("flex");
     var rate = document.createElement("div");
+    rate.classList.add("flex");
     var amount = document.createElement("div");
+    amount.classList.add("flex");
     var itemText = document.createTextNode(containerDetails.name);
     var qtyText = document.createTextNode(salesQuantity.toString());
     var rateText = document.createTextNode(containerDetails.price.toString());
@@ -409,9 +415,9 @@ function addToBilling(className) {
     totItems = totItems + 1;
     totQty = totQty + salesQuantity;
     totPrice = totPrice + amountCalc;
-    totItemsId.innerHTML = totItems.toString();
-    totQtyId.innerHTML = totQty.toString();
-    totPriceId.innerHTML = totPrice.toString();
+    totItemsId.textContent = totItems.toString();
+    totQtyId.textContent = totQty.toString();
+    totPriceId.textContent = totPrice.toString();
     removeEditId++;
 }
 /**
