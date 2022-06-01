@@ -68,6 +68,16 @@ sub{
 .searchMedicine:focus{
     outline: none;
 }
+.tablet{
+    position: absolute;
+    top: 7rem;
+    left: 2rem;
+}
+.count{
+    position: absolute;
+    top: 5rem;
+    left: 3rem;
+}
 .clear{
    font-size: 2rem !important;
    padding: 0.75rem;
@@ -107,22 +117,32 @@ h4{
     background-color: rgb(189,236,143) !important;
 }
 .containerStyle>div{
-    animation: rotate-animation 2s linear infinite;
+    animation: translate-animation 1s linear 2s both;
     z-index: 11;
 }
 .containerStyle p:last-child, .blinkContainer p:last-child, .contStyle p:last-child{
     display: flex;
 }
-@keyframes rotate-animation {
-    0% {
+@keyframes translate-animation {
+    0%{
       transform: translate3d(1.5rem, 1.8rem, 3rem);
     }
-    50%{
+    100%{
         transform: translate3d(1.5rem, 1.8rem, 15rem);
       }
+} 
+.containerStyle .contFront{
+    animation: open-animation 1s linear 3s both;
+}
+@keyframes open-animation {
+    0%{
+        transform: rotateY(0deg) translateZ(calc(var(--contSideWidth)/2));
+        transform-origin: left;
+    }
     100%{
-        transform: translate3d(1.5rem, 1.8rem, 3rem) ;
-      }
+        transform: rotateY(90deg) translateZ(calc(var(--contSideWidth)/2));
+        transform-origin: left;
+    }
 }
 .sticker{
     padding: 0.3rem;
@@ -398,7 +418,6 @@ button:hover,.go:hover{
 }
 .contFront{
     transform: rotateY(0deg) translateZ(calc(var(--contSideWidth)/2));
-    opacity: 0.8;
     font-size: 1.2rem;
     text-align: center;
     flex-direction: column;

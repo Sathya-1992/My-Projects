@@ -224,14 +224,17 @@ function salesMedicine() {
  * @param containerDetails to update particular medicine
  */
 function updateAvailableQuantity(containerDetails) {
-    medicineQuantity.textContent = containerDetails.availableQuantity + '';
-    document.querySelector("." + containerDetails.id).lastChild.firstChild.textContent = containerDetails.availableQuantity + '';
-    document.getElementById(containerDetails.id).firstChild.firstChild.lastChild.textContent = containerDetails.availableQuantity + '';
+    var medicineCount = document.getElementById(containerDetails.id);
+    var quantity = containerDetails.availableQuantity + '';
+    medicineQuantity.textContent = quantity;
+    document.querySelector("." + containerDetails.id).lastChild.firstChild.textContent = quantity;
+    medicineCount.firstChild.firstChild.lastChild.textContent = quantity;
+    medicineCount.firstChild.lastChild.textContent = quantity;
     var validateQuantity = (30 * containerDetails.capacity) / 100;
     if (containerDetails.availableQuantity < validateQuantity) {
         blinkAlert(containerDetails.id);
     }
-    else if (document.getElementById(containerDetails.id).classList.contains("blinkContainer")) {
+    else if (medicineCount.classList.contains("blinkContainer")) {
         removeBlinkAlert(containerDetails.id);
     }
 }
@@ -514,6 +517,13 @@ function rackGenerator() {
                 var smallright = document.createElement("div");
                 var smalltop = document.createElement("div");
                 var smallbottom = document.createElement("div");
+                var tabletImage = document.createElement("img");
+                tabletImage.setAttribute("src", "./tablet1.png");
+                tabletImage.classList.add("tablet");
+                var tabletElement = document.createElement("p");
+                tabletElement.classList.add("count");
+                var tabletCount = document.createTextNode(medicines[index].availableQuantity.toString());
+                tabletElement.appendChild(tabletCount);
                 smallfront.classList.add("face", "contBackground", "contFrontBack", "contFront", "flex");
                 smallback.classList.add("face", "contBackground", "contFrontBack", "contBack");
                 smallleft.classList.add("face", "contBackground", "contLeftRight", "contLeft");
@@ -526,6 +536,8 @@ function rackGenerator() {
                 smallCube.appendChild(smallright);
                 smallCube.appendChild(smalltop);
                 smallCube.appendChild(smallbottom);
+                smallCube.appendChild(tabletImage);
+                smallCube.appendChild(tabletElement);
                 medbox.appendChild(smallCube);
                 shelf.appendChild(medbox);
                 index++;
