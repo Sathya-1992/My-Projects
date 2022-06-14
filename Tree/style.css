@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.html{
+    font-size: 10px;
+}
+.body{
+    height: 100vh;
+    width: 100vw;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+}
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.margin{
+    padding-left: 2rem;
+}
+.disable{
+    display: none ;
+}
+.treeBackground{
+    background-color: rgb(173, 169, 169);
+    cursor: pointer;
+}
+.symbol::before{
+    content: url(./expand.png);  
+    font-weight: bold;
+    vertical-align: middle;
+}
+.explored::before{
+    content: url(./expandMore.png);  
+    font-weight: bold;
+    vertical-align: middle;
+}
+.symbol:hover,.explored:hover,.select:hover{
+    font-weight: bolder;
+}
