@@ -1,0 +1,37 @@
+.container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 2rem;
+    gap: 2rem;
+}
+.component{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+    min-height: 0;
+}
+.dialog{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(58, 56, 56, 0.466);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    padding: 1rem;
+}
+.dialogBtn{
+    display: flex;
+    justify-self: center;
+    font-size: 5rem;
+    border-radius: 50%;
+}
+app-details-component{
+    min-height: 0;
+}

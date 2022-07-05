@@ -1,0 +1,23 @@
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    color: #5F6368;
+    font-size: 1.4rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #dadce0;
+    background-color: white;
+    z-index: -1;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+a:visited{
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,3 @@
+<div class="clickBox" (dblclick)="createDivEle($event)" (click)="this.dataService.highLightValue=false">
+    <div><a class="smallBox" [ngClass]="{'highLightBox': data.x+data.y==this.dataService.highLightValue}" [ngStyle]="{'left':data.x,'top':data.y}" *ngFor="let data of divArray; index as i" (dblclick)="$event.stopPropagation();" (click)="highLightEle(data.x,data.y,$event)" [routerLink]="['/position',data.x,data.y]" (keydown.delete)="removeDiv(i)"></a></div>
+</div>

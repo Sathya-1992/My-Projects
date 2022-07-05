@@ -1,0 +1,14 @@
+<div class="dialogBox" (keydown.enter)="addValues()">
+    <div>
+        <label>Enter X value : </label>
+        <input type="number" [(ngModel)]="xValue">
+    </div>
+    <div>
+        <label>Enter Y value : </label>
+        <input type="number" [(ngModel)]="yValue">
+    </div>
+    <div class="btn">
+        <button type="submit" (click)="addValues()">Add</button>
+    </div>
+    
+</div>

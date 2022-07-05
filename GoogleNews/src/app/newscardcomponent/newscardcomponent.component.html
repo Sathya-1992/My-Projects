@@ -1,0 +1,17 @@
+<div class="newsCard newsBorder">
+    <a class="newsImage" href={{newsDetails.url}} target="_blank">
+        <div class="newsCard">
+            <div>{{newsDetails.publisher}}</div>
+            <div class="title">{{newsDetails.title}}</div>
+            <div class="time">{{newsDetails.time}}</div>
+        </div>
+        <img src={{newsDetails.image}}>
+    </a>
+    <div class="subNews">
+        <app-sub-newscomponent *ngFor="let subNews of newsDetails.reference; index as i" [subNewsDetails]="subNews" [indexValue]="i"></app-sub-newscomponent>
+    </div>
+    <a class="flex" href={{newsDetails.fullCover}}>
+        <div class="fullIcon"></div>
+        <div>Full coverage</div>
+    </a>
+</div>

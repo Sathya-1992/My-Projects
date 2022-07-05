@@ -1,0 +1,50 @@
+.box{
+    display: grid;
+    grid-template-rows: auto minmax(25rem,auto);
+    gap: 3rem;
+}
+.header{
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #dadce0;
+    font-size: 2rem;
+}
+.topicList{
+    border: 1px solid #dadce0;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    gap: 3rem;
+}
+.listBox{
+    width: 30%;
+    height: 50%;
+    padding: 3rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #dadce0;
+    border-radius: 1rem;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.fav{
+    background-image: url("./favorites.png");
+    height: 3rem;
+    width: 3rem;
+    background-size: cover;
+}
+.more{
+    font-size: 1.2rem !important;
+}
+.remove{
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.remove:hover{
+    background-color: rgb(240, 236, 236);
+}

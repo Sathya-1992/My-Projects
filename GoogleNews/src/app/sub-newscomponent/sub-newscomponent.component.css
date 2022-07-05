@@ -1,0 +1,35 @@
+.subNews{
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: #faf9f9;
+    padding: 1rem;
+    gap: 1rem;
+}
+.leftBorder{
+    border-top-left-radius: 1rem;
+}
+.rightBorder{
+    border-top-right-radius: 1rem;
+}
+.publish{
+    font-size: 1.2rem;
+    font-style: italic;
+}
+.title,.time{
+    font-size: 1.2rem;
+    color: #5F6368;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    background-color: #f0efef;
+}
+a:hover .title{
+    text-decoration: underline;
+}
+a:visited{
+    text-decoration: none;
+    color: inherit;
+}

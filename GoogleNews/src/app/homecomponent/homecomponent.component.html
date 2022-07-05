@@ -1,0 +1,26 @@
+<div class="mainComp" (click)="hideInputFocus()">
+    <main>
+        <div class="headline">
+            <div class="flex gap">
+                <div class="news flex">
+                    <span class="material-icons-outlined">newspaper</span>
+                </div>
+                <div class="head">Headlines</div>
+            </div>
+            <div class="flex follow gap">
+                <div class="favourite flex" (click)="addFollowing()">
+                    <div><span class="material-icons-outlined">star_border</span></div>
+                    <div>Follow</div>
+                </div>
+                <div class="flex share">
+                    <span class="material-icons-outlined">share</span>
+                    <div>Share</div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap">
+            <div [appSelectedTopic]="{'value':this.dataService.isClickTopic==topic}" *ngFor="let topic of this.dataService.topics" class="topic"  (click)="this.dataService.isClickTopic=topic" [routerLink]="['/Home',topic]">{{topic}}</div>
+        </div>
+        <app-mainnewscomponent></app-mainnewscomponent>
+    </main>
+</div>

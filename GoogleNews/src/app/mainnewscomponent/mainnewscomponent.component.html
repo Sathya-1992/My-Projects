@@ -1,0 +1,3 @@
+<div class="main">
+    <app-newscardcomponent *ngFor="let news of this.dataService.newsContent | filter:this.dataService.isClickTopic" [newsDetails]="news"></app-newscardcomponent>
+</div>

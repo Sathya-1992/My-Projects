@@ -1,0 +1,9 @@
+<div class="detailBox">
+    <div class="positionBox" [ngClass]="{'highLightBox':data.x+data.y==this.dataService.highLightValue}" *ngFor="let data of divArray;index as i" (click)="highLightDiv(data.x,data.y)">
+    <div>{{data | custom}}</div>
+    <button (click)="deleteDivEle(i)">Delete</button>
+    </div>
+</div>
+    
+
+

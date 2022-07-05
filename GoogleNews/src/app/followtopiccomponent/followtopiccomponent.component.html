@@ -1,0 +1,12 @@
+<div class="box">
+    <div class="header">{{followHeader.name}}</div>
+    <div class="topicList">
+        <div class="listBox" *ngFor="let list of followHeader.topicArray">
+            <div class="flex">
+                <div class="fav"></div>
+                <div>{{list}}</div>
+            </div>
+            <div class="remove"><span class="material-icons-outlined more">more_vert</span></div>
+        </div>
+    </div>
+</div>

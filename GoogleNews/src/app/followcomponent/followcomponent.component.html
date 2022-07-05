@@ -1,0 +1,11 @@
+<div class="mainComp">
+    <main>
+        <div class="flex">
+            <div class="header" *ngFor="let val of this.dataService.followHeading">{{val}}</div>
+        </div>
+        <div class="mainDetails">
+            <app-followtopiccomponent *ngFor="let header of this.dataService.followTopicHeader" [followHeader]="header"></app-followtopiccomponent>
+        </div>
+    </main>
+</div>
+

@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="component">
+        <app-cursor-component></app-cursor-component>
+        <app-details-component></app-details-component>
+    </div>
+    <button class="dialogBtn" (click)="openDialog()">+</button>
+</div>
+<div class="dialog" *ngIf="dataService.isShowDialogBox" (click)="disableDialogBox()">
+    <app-dialog-component (click)="$event.stopPropagation()"></app-dialog-component>
+</div>

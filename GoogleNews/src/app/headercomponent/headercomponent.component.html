@@ -1,0 +1,22 @@
+<header>
+    <div class="flex">
+        <div class="logo"></div>
+        <div class="news">News</div>
+    </div>
+    <div class="flex helpGap"> 
+        <div class="search" [ngClass]="{'inputStyle':this.dataService.isFocusInput}">
+            <div class="searchIcon iconImg"></div>
+            <input type="text" [(ngModel)]="searchText" placeholder="Search for topics, locations & sources" (keypress)="this.dataService.isShowSearchCard=true" (keydown.enter)="getTopic($event)" (focus)="this.dataService.isFocusInput=true;" (click)="$event.stopPropagation()">
+            <div class="expand iconImg"></div>
+        </div>
+        <div class="help iconImg"></div>
+        <div class="settings iconImg"></div>
+        <div class="searchItems" *ngIf="this.dataService.isShowSearchCard" (click)="selectList($event)">
+            <div *ngFor="let topic of this.dataService.topics | search:searchText" class="listStyle">{{topic}}</div>
+        </div>
+    </div>
+    <div class="flex gap">
+        <div class="apps"></div>
+        <div class="account flex">s</div>
+    </div>
+</header>
