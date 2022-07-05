@@ -8,7 +8,7 @@
                 <div class="head">Headlines</div>
             </div>
             <div class="flex follow gap">
-                <div class="favourite flex" (click)="addFollowing()">
+                <div [appFollowing]="{'value':this.dataService.isFollowingTopic}" [appSelectedTopic]="{'value':this.dataService.isFollowingTopic}" class="favourite flex" (click)="addFollowing()">
                     <div><span class="material-icons-outlined">star_border</span></div>
                     <div>Follow</div>
                 </div>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="wrap">
-            <div [appSelectedTopic]="{'value':this.dataService.isClickTopic==topic}" *ngFor="let topic of this.dataService.topics" class="topic"  (click)="this.dataService.isClickTopic=topic" [routerLink]="['/Home',topic]">{{topic}}</div>
+            <div [appSelectedTopic]="{'value':this.dataService.isClickTopic==topic}" *ngFor="let topic of this.dataService.topics" class="topic"  (click)="getSelectedTopic(topic)" [routerLink]="['/Home',topic]">{{topic}}</div>
         </div>
         <app-mainnewscomponent></app-mainnewscomponent>
     </main>

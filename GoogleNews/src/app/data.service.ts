@@ -8,6 +8,7 @@ export class DataService {
   isShowSearchCard:boolean=false;
   isFocusInput:boolean=false;
   isClickTopic:string="Latest";
+  isFollowingTopic:boolean=false;
   topics:string[]=["Latest","India","World","Business","Technology","Entertainment","Sports","Science","Health"];
   followHeading:string[]=["Topics & Sources","Saved searches","Saved stories"];
   followTopicHeader:{name:string,topicArray:string[]}[]=[
@@ -24,46 +25,6 @@ export class DataService {
       topicArray:[]
     }];
   newsContent:NewsModel[]=[{
-    topic : "India",
-    publisher : "NDTV",
-    title : "Who Next After Uddhav Thackeray? Sena Rebels May Meet Governor, BJP Waits",
-    time : "40 minutes ago",
-    image:"assets/uddhav.png",
-    url :"https://www.ndtv.com/india-news/maharashtra-crisis-shiv-sena-rebel-eknath-shinde-to-meet-mlas-today-may-meet-governor-say-sources-day-after-uddhav-thackeray-resigns-as-chief-minister-3113600",
-    reference : [{
-      publisher : "The Indian Express",
-      title : "Rebel Sena MLAs land in Goa, Shinde to discuss next move",
-      time : "5 hours ago",
-      url : "https://indianexpress.com/article/cities/goa/rebel-sena-mlas-land-in-goa-shinde-to-discuss-next-move-7999630/"
-    },{
-      publisher : "India Today",
-      title : "Need to strengthen anti-defection law: SC during Maharashtra floor test hearing",
-      time : "3 hours ago",
-      url : "https://www.indiatoday.in/law/story/maharashtra-political-crisis-sc-hearing-floor-test-uddhav-thackeray-anti-defection-law-1968392-2022-06-30"
-    }
-  ],
-  fullCover : "https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k3MjliRUJSRzUzSWhIRUE1NVJDZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
-  },{
-    topic : "World",
-    publisher : "The Hindu",
-    title : "Russia-Ukraine crisis live updates | NATO refits in Eastern Europe against Russia",
-    url : "https://www.thehindu.com/news/international/russia-ukraine-crisis-live-updates-dozens-missing-after-strike-on-ukraine-mall-russia-presses-attacks-on-east/article65578475.ece",
-    time : "21 hours ago",
-    image:"assets/ukraine-blast.jpg",
-    reference : [{
-      publisher : "The Times of India",
-      title : "Russia Ukraine War News LIVE Updates: Russia steps up attacks in Ukraine after Nato summit",
-      time : "1 hours ago",
-      url :"https://timesofindia.indiatimes.com/world/europe/russia-ukraine-war-news-live-updates-june-30/liveblog/92555468.cms",
-    },{
-      publisher : "NDTV",
-      title : "On Camera, People Run For Cover In Ukraine Park As Russian Missiles Hit Shopping Mall",
-      time : "Yesterday",
-      url:"https://www.ndtv.com/world-news/on-camera-people-run-for-cover-in-ukraine-park-as-russian-missiles-hit-shopping-mall-3110272"
-    }
-  ],
-  fullCover : "https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lkbmNqQUJSR1ctOHQ4ek0xSEtTZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
-  },{
     topic : "Business",
     publisher : "moneycontrol",
     title : "Market LIVE Updates: Indices trade flat amid volatility; RIL, Infosys, Tata Motors most active",
@@ -84,25 +45,25 @@ export class DataService {
   ],
   fullCover:"https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pBakpfRUJSR3B4cFMza1JucGhTZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
   },{
-    topic : "Technology",
-    publisher : "mint",
-    title : "Apple iPhone 12 prices slashed on Amazon. Here's how to avail the discount",
-    url : "https://www.livemint.com/news/india/apple-iphone-12-prices-slashed-on-amazon-ahead-of-iphone-14-launch-here-s-how-to-avail-the-discount-11656579643318.html",
-    time : "20 hours ago",
-    image:"assets/apple.jpeg",
+    topic : "India",
+    publisher : "NDTV",
+    title : "Who Next After Uddhav Thackeray? Sena Rebels May Meet Governor, BJP Waits",
+    time : "40 minutes ago",
+    image:"assets/uddhav.png",
+    url :"https://www.ndtv.com/india-news/maharashtra-crisis-shiv-sena-rebel-eknath-shinde-to-meet-mlas-today-may-meet-governor-say-sources-day-after-uddhav-thackeray-resigns-as-chief-minister-3113600",
     reference : [{
-      publisher : "HI Tech",
-      title : "iPhone 13 mini, iPhone 12 mini price cuts are here! Know how to nab these iphone deals",
-      time : "22 hours ago",
-      url :"https://tech.hindustantimes.com/how-to/iphone-13-mini-iphone-12-mini-prices-are-here-know-how-to-nab-these-iphone-deals-71656578470057.html",
+      publisher : "The Indian Express",
+      title : "Rebel Sena MLAs land in Goa, Shinde to discuss next move",
+      time : "5 hours ago",
+      url : "https://indianexpress.com/article/cities/goa/rebel-sena-mlas-land-in-goa-shinde-to-discuss-next-move-7999630/"
     },{
-      publisher : "91mobiles",
-      title : "iPhone 13 mini available at Rs 64,999 on Flipkart, but here’s why you should wait for a better deal",
-      time : "23 hours ago",
-      url:"https://www.91mobiles.com/hub/iphone-13-mini-price-cut-india-flipkart-wait-or-buy/"
+      publisher : "India Today",
+      title : "Need to strengthen anti-defection law: SC during Maharashtra floor test hearing",
+      time : "3 hours ago",
+      url : "https://www.indiatoday.in/law/story/maharashtra-political-crisis-sc-hearing-floor-test-uddhav-thackeray-anti-defection-law-1968392-2022-06-30"
     }
   ],
-  fullCover:"https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k1LW9hX0JSRUNmVXRYeWM1SUx5Z0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
+  fullCover : "https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k3MjliRUJSRzUzSWhIRUE1NVJDZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
   },{
     topic : "Entertainment",
     publisher : "Indiaglitz",
@@ -124,6 +85,26 @@ export class DataService {
   ],
   fullCover:"https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pCdlpyRUJSSEQzLXpjTV9BQ3JDZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
   },{
+    topic : "Technology",
+    publisher : "mint",
+    title : "Apple iPhone 12 prices slashed on Amazon. Here's how to avail the discount",
+    url : "https://www.livemint.com/news/india/apple-iphone-12-prices-slashed-on-amazon-ahead-of-iphone-14-launch-here-s-how-to-avail-the-discount-11656579643318.html",
+    time : "20 hours ago",
+    image:"assets/apple.jpeg",
+    reference : [{
+      publisher : "HI Tech",
+      title : "iPhone 13 mini, iPhone 12 mini price cuts are here! Know how to nab these iphone deals",
+      time : "22 hours ago",
+      url :"https://tech.hindustantimes.com/how-to/iphone-13-mini-iphone-12-mini-prices-are-here-know-how-to-nab-these-iphone-deals-71656578470057.html",
+    },{
+      publisher : "91mobiles",
+      title : "iPhone 13 mini available at Rs 64,999 on Flipkart, but here’s why you should wait for a better deal",
+      time : "23 hours ago",
+      url:"https://www.91mobiles.com/hub/iphone-13-mini-price-cut-india-flipkart-wait-or-buy/"
+    }
+  ],
+  fullCover:"https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k1LW9hX0JSRUNmVXRYeWM1SUx5Z0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
+  },{
     topic : "Sports",
     publisher : "NDTV",
     title : "England vs India, 5th Test: James Anderson Returns As England Name Playing XI",
@@ -143,6 +124,26 @@ export class DataService {
     }
   ],
   fullCover:"https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pybUxmREJSR1lKYVZHeTJybW95Z0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
+  },{
+    topic : "World",
+    publisher : "The Hindu",
+    title : "Russia-Ukraine crisis live updates | NATO refits in Eastern Europe against Russia",
+    url : "https://www.thehindu.com/news/international/russia-ukraine-crisis-live-updates-dozens-missing-after-strike-on-ukraine-mall-russia-presses-attacks-on-east/article65578475.ece",
+    time : "21 hours ago",
+    image:"assets/ukraine-blast.jpg",
+    reference : [{
+      publisher : "The Times of India",
+      title : "Russia Ukraine War News LIVE Updates: Russia steps up attacks in Ukraine after Nato summit",
+      time : "1 hours ago",
+      url :"https://timesofindia.indiatimes.com/world/europe/russia-ukraine-war-news-live-updates-june-30/liveblog/92555468.cms",
+    },{
+      publisher : "NDTV",
+      title : "On Camera, People Run For Cover In Ukraine Park As Russian Missiles Hit Shopping Mall",
+      time : "Yesterday",
+      url:"https://www.ndtv.com/world-news/on-camera-people-run-for-cover-in-ukraine-park-as-russian-missiles-hit-shopping-mall-3110272"
+    }
+  ],
+  fullCover : "https://news.google.com/stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lkbmNqQUJSR1ctOHQ4ek0xSEtTZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
   },{
     topic : "India",
     publisher : "NDTV",

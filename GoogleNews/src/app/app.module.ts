@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
 import { FirstcomponentComponent } from './firstcomponent/firstcomponent.component';
 import { FollowingDirective } from './following.directive';
+import { TooltipDirective } from './tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FollowingDirective } from './following.directive';
     SelectedTopicDirective,
     SearchPipe,
     FirstcomponentComponent,
-    FollowingDirective
+    FollowingDirective,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
